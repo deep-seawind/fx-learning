@@ -10,9 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <body>
+        <body suppressHydrationWarning={true}>
         <Header />
-        <main style={{ minHeight: '80vh', padding: '20px' }}>
+        <main style={{ minHeight: '80vh' }}>
           {children}
         </main>
         <Footer />

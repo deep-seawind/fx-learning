@@ -1,11 +1,17 @@
 import React from 'react'
+import { HeroSection } from './HomePage/HeroSection'   
+import CareerSkillsSection from './HomePage/CareerSkillsSection'
+import AICareerHero from './HomePage/AICareerHero' 
+import CourseSection from './HomePage/CourseSection'
 
 const page = () => {
   return (
-    <main className="p-10">
-      <h1 className="text-3xl font-bold">Home Page</h1>
-      <p>This is my content.</p>
-    </main>
+     <>
+     <HeroSection/>  
+     <CareerSkillsSection/>
+     <AICareerHero/> 
+     <CourseSection/>
+     </>
   )
 }
 

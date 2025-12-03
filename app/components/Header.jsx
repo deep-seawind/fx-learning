@@ -1,149 +1,265 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { Menu, X, BarChart2 } from 'lucide-react';
-
-const navItems = [
-  { name: 'Courses', href: '/courses' },
-  { name: 'Analytics', href: '/analytics' },
-  { name: 'Community', href: '/community' },
-  { name: 'Pricing', href: '/pricing' },
-];
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Menu, X, Search } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // body scroll lock when menu open
+  const [subMenuOpen, setSubMenuOpen] = useState(false);
+
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
+    document.body.style.overflow = isOpen ? "hidden" : "";
   }, [isOpen]);
 
-  // close on Escape
-  useEffect(() => {
-    function onKey(e) {
-      if (e.key === 'Escape') setIsOpen(false);
-    }
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, []);
-
   return (
-    <header className="sticky top-0 z-40 bg-white/95 shadow-2xl backdrop-blur-md transition-all duration-300">
-      <div className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
+    <header className="sticky top-0 z-40 bg-white backdrop-blur-md shadow-md transition-all duration-300">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8 py-4 flex items-center justify-between gap-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2 group">
-          <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-indigo-500 to-sky-400 p-1 shadow-lg transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
-            <BarChart2 className="h-full w-full text-white" strokeWidth={2.5} />
-          </div>
-          <span className="text-2xl font-black text-gray-900 tracking-tighter transition-colors duration-300 group-hover:text-indigo-700">
-            FX<span className="text-indigo-600">Master</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <img src="/logo-coursera.svg" alt="Logo" className="h-7 md:h-8" />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex lg:gap-x-10">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="px-3 py-1 rounded-full text-base font-medium text-gray-600 transition-all duration-300 hover:text-indigo-800 hover:bg-indigo-50"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
+        {/* Desktop Navigation + Search */}
+        <div className="hidden lg:flex items-center gap-8 flex-1">
+          {/* Navigation */}
+          <nav className="flex items-center gap-6">
+            {/* Desktop Mega Menu - Hover */}
+            <div className="relative group hidden lg:block">
+              <button className="flex items-center gap-1 text-gray-700 hover:text-blue-600 text-sm font-medium">
+                Explore ▼
+              </button>
 
-        {/* Desktop CTA */}
-        <div className="hidden lg:flex lg:items-center lg:space-x-4">
-          <Link href="/login" className="px-3 py-2 text-base text-gray-700 font-medium hover:text-indigo-600 transition-colors duration-200">
+              {/* Dropdown */}
+              <div
+                className="absolute left-0 invisible opacity-0 group-hover:visible group-hover:opacity-100
+               transition-all duration-300 mt-4 w-[920px] bg-white shadow-xl rounded-xl p-8 
+               grid grid-cols-4 gap-10 z-50 border border-gray-100"
+              >
+                {/* Explore Roles */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3 text-sm">
+                    Explore roles
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Forex Trader
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Crypto Trader
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Market Analyst
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Risk Manager
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Investment Advisor
+                    </li>
+                    <li className="text-blue-600 cursor-pointer">View all</li>
+                  </ul>
+                </div>
+
+                {/* Explore Categories */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3 text-sm">
+                    Explore categories
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Forex Trading
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Commodities
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Indices
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Shares
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      ETF Trading
+                    </li>
+                    <li className="text-blue-600 cursor-pointer">View all</li>
+                  </ul>
+                </div>
+
+                {/* Certifications */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3 text-sm">
+                    Earn a Certificate
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Forex Certification
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Technical Analysis
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Trading Psychology
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Risk Management
+                    </li>
+                    <li className="text-blue-600 cursor-pointer">View all</li>
+                  </ul>
+                </div>
+
+                {/* Trending Skills */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3 text-sm">
+                    Trending skills
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Price Action
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Chart Patterns
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Algo Trading
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer">
+                      Crypto Trading
+                    </li>
+                    <li className="text-blue-600 cursor-pointer">View all</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <Link
+              href="#"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600"
+            >
+              Degrees
+            </Link>
+          </nav>
+
+          {/* Search Bar */}
+          <div className="relative flex-1 max-w-xl">
+            <input
+              type="text"
+              placeholder="What do you want to learn?"
+              className="w-full rounded-full border border-gray-200 py-3 pl-5 pr-14 text-sm shadow-sm outline-none
+              focus:ring-2 focus:ring-blue-500 transition-all"
+            />
+            <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 p-2.5 rounded-full hover:bg-blue-700 transition-all shadow-md">
+              <Search size={16} className="text-white" />
+            </button>
+          </div>
+
+          {/* New Link */}
+          <Link
+            href="#"
+            className="text-sm font-medium text-gray-700 hover:text-blue-600"
+          >
+            Plans & Pricing
+          </Link>
+        </div>
+
+        {/* Desktop Auth */}
+        <div className="hidden lg:flex items-center gap-5 shrink-0">
+          <Link
+            href="#"
+            className="text-sm font-semibold text-gray-800 hover:text-blue-600 transition"
+          >
             Sign In
           </Link>
+
           <Link
-            href="/signup"
-            className="rounded-full bg-indigo-600 px-6 py-2.5 text-sm font-bold text-white shadow-xl shadow-indigo-400/50 transition-all duration-300 hover:bg-indigo-700 hover:shadow-indigo-500/70 hover:-translate-y-0.5"
+            href="#"
+            className="rounded-full bg-linear-to-r from-blue-600 to-indigo-700 text-white px-6 py-2.5
+                       text-sm font-bold shadow-lg hover:shadow-blue-500/40
+                       hover:from-indigo-700 hover:to-blue-600 transition-all hover:-translate-y-0.5 active:scale-95"
           >
-            Start Learning
+            Get Started
           </Link>
         </div>
 
-        {/* Mobile Menu Button — toggle */}
+        {/* Mobile Toggle */}
         <button
-          aria-label="Toggle menu"
-          className="lg:hidden -m-2.5 p-2.5 text-gray-700 hover:text-indigo-600 transition-colors duration-200"
-          onClick={() => setIsOpen((v) => !v)}
+          className="lg:hidden p-2 text-gray-700 hover:text-blue-600 transition"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
- 
-      <div 
-        onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-40 transition-opacity duration-300 lg:hidden ${
-          isOpen ? 'visible opacity-100' : 'invisible opacity-0'
-        }`}
-        aria-hidden={!isOpen}
-      />
- 
-      <aside 
-        onClick={(e) => e.stopPropagation()}
-        className={`fixed top-0 right-0 z-50 h-full w-full max-w-sm transform transition-transform duration-400 ease-in-out lg:hidden
-          bg-white p-6  
-          ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
-        role="dialog"
-        aria-modal="true"
-        aria-hidden={!isOpen}
-      >
-        <div className="flex items-center justify-between bg-white">
-          <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-            <div className="h-7 w-7 rounded-xl bg-gradient-to-br from-indigo-500 to-sky-400 p-1  ">
-              <BarChart2 className="h-full w-full text-white" strokeWidth={2.5} />
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="lg:hidden absolute inset-x-0 bg-white px-4 py-6 space-y-5 shadow-lg">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="w-full rounded-lg border border-gray-200 py-3 px-3 text-sm shadow-sm"
+          />
+
+          <nav className="space-y-4">
+            <div>
+              <button
+                onClick={() => setSubMenuOpen(!subMenuOpen)}
+                className="w-full text-left text-sm text-gray-800 font-medium flex justify-between items-center"
+              >
+                Explore
+                <span>{subMenuOpen ? "▲" : "▼"}</span>
+              </button>
+
+              {subMenuOpen && (
+                <div className="pl-3 mt-3 space-y-4 animate-fadeIn">
+                  {/* Same MENU CONTENT reused but stacked */}
+                  <div>
+                    <h4 className="font-semibold text-gray-800 text-xs mb-2">
+                      Explore roles
+                    </h4>
+                    <ul className="space-y-1 text-gray-600 text-sm">
+                      <li>Forex Trader</li>
+                      <li>Crypto Trader</li>
+                      <li>Market Analyst</li>
+                      <li>View all</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-gray-800 text-xs mb-2">
+                      Categories
+                    </h4>
+                    <ul className="space-y-1 text-gray-600 text-sm">
+                      <li>Forex Trading</li>
+                      <li>Commodities</li>
+                      <li>Indices</li>
+                      <li>View all</li>
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
-            <span className="text-xl font-black text-gray-900 tracking-tight">
-              FX<span className="text-indigo-600">Master</span>
-            </span>
-          </Link>
-
-          <button aria-label="Close menu" onClick={() => setIsOpen(false)} className="p-2.5 text-gray-700 hover:text-indigo-600">
-            <X className="h-6 w-6" />
-          </button>
-        </div>
-
-        <nav className="space-y-4 border-t border-gray-100 pt-6 bg-white h-screen">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className="block rounded-lg px-3 py-3 text-lg font-semibold text-gray-800 transition-colors duration-200 hover:bg-indigo-50 hover:text-indigo-700"
-            >
-              {item.name}
+            <Link href="#" className="block text-sm text-gray-800 font-medium">
+              Degrees
             </Link>
-          ))}
+            <Link href="#" className="block text-sm font-medium text-gray-800">
+              Plans & Pricing
+            </Link>
+          </nav>
 
-          <div className="pt-6 border-t border-gray-100 space-y-4">
-            <Link
-              href="/login"
-              onClick={() => setIsOpen(false)}
-              className="block text-center rounded-full border border-gray-300 px-3 py-2.5 text-base font-semibold text-gray-700 hover:bg-gray-100"
-            >
+          <div className="pt-5 border-t">
+            <Link href="#" className="block text-gray-800 font-semibold mb-4">
               Sign In
             </Link>
-
             <Link
-              href="/signup"
-              onClick={() => setIsOpen(false)}
-              className="block text-center rounded-full bg-indigo-600 px-3 py-3 text-base font-bold text-white shadow-md hover:bg-indigo-700"
+              href="#"
+              className="block text-center rounded-full bg-blue-600 text-white py-2.5 font-bold shadow hover:bg-blue-700"
             >
-              Start Learning
+              Get Started
             </Link>
           </div>
-        </nav>
-      </aside>
+        </div>
+      )}
     </header>
   );
 }
