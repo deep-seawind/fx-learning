@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation"; 
+import "swiper/css/navigation";
 import Banner1 from "../../public/images/banners/banner-1.jpg";
 import Banner2 from "../../public/images/banners/banner-2.jpg";
 import Banner3 from "../../public/images/banners/banner-3.jpg";
@@ -45,7 +45,7 @@ export const HeroSection = () => {
     <section className="w-full relative overflow-hidden bg-[#F9FBFC]">
       <Swiper
         loop
-        autoplay={{ delay: 4500, disableOnInteraction: false }} 
+        autoplay={{ delay: 4500, disableOnInteraction: false }}
         className="h-screen w-full"
       >
         {slides.map((slide) => (
@@ -101,10 +101,9 @@ export const HeroSection = () => {
                   {/* RIGHT IMAGE */}
                   <div className="flex justify-center relative">
                     <div className="  w-full">
-      
-                      <img 
+                      <img
                         src={slide.img.src}
-                        alt="Professional Digital Asset" 
+                        alt="Professional Digital Asset"
                         className="rounded-4xl w-full h-96 object-cover "
                       />
                     </div>

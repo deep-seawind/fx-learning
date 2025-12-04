@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X, Search } from "lucide-react";
+import Logo from "../../public/images/logo/FX-Education-logo.png"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8 py-4 flex items-center justify-between gap-6">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <img src="/logo-coursera.svg" alt="Logo" className="h-7 md:h-8" />
+          <img src={Logo.src} alt="Logo" className="h-7 md:h-20" />
         </Link>
 
         {/* Desktop Navigation + Search */}

@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { BarChart2, Zap, Mail, MapPin } from 'lucide-react'; 
+import Logo from "../../public/images/logo/FX-Education-logo.png"
+
 
 const footerLinks = [
   {
@@ -34,15 +36,15 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="mt-20 bg-gray-50 border-t border-gray-200">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
+    <footer className="  bg-gray-50 border-t border-gray-200">
+      <div className="mx-auto container   py-12  md:py-16   lg:py-5">
         
         {/* Top Section: Call to Action (Floating Block) */}
-        <div className="relative -mt-40 mb-16 rounded-[2rem] bg-white p-6 shadow-2xl ring-4 ring-indigo-50/50 sm:p-10 lg:p-14 transform transition-all duration-700 ease-in-out hover:scale-[1.01] hover:shadow-indigo-400/40">
+        {/* <div className="relative -mt-40 mb-16 rounded-4xl bg-white p-6 shadow-2xl ring-4 ring-indigo-50/50 sm:p-10 lg:p-14 transform transition-all duration-700 ease-in-out hover:scale-[1.01] hover:shadow-indigo-400/40">
           <div className="flex flex-col items-center text-center sm:flex-row sm:justify-between sm:text-left">
             
             <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4 mb-4 sm:mb-0">
-              <div className="p-3 bg-indigo-100 rounded-full flex-shrink-0 mb-4 sm:mb-0">
+              <div className="p-3 bg-indigo-100 rounded-full shrink-0 mb-4 sm:mb-0">
                 <Zap className="h-6 w-6 sm:h-8 sm:w-8 text-indigo-600" strokeWidth={1.5} />
               </div>
               <div className="text-center sm:text-left">
@@ -62,7 +64,7 @@ const Footer = () => {
               Start Your Free Trial
             </Link>
           </div>
-        </div>
+        </div> */}
         
         {/* Main Grid Links Section */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5 md:gap-y-10 mt-8">
@@ -70,12 +72,7 @@ const Footer = () => {
           {/* Brand and Description Column */}
           <div className="col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-xl bg-gradient-to-br from-indigo-500 to-sky-400 p-1 shadow-md">
-                <BarChart2 className="h-full w-full text-white" strokeWidth={2.5} />
-              </div>
-              <span className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">
-                FX<span className="text-indigo-600">Master</span>
-              </span>
+                <img src={Logo.src} alt="Logo" className="h-7 md:h-20" />
             </Link>
             <p className="mt-4 text-sm sm:text-base text-gray-600 max-w-xs">
               Precision learning for the future of foreign exchange trading. Built for clarity and confidence.
@@ -83,11 +80,11 @@ const Footer = () => {
             {/* Contact Info Group */}
             <div className="mt-6 space-y-2 text-sm">
                 <p className="flex items-center space-x-2 text-gray-600">
-                    <Mail className="h-4 w-4 text-indigo-500 flex-shrink-0" />
+                    <Mail className="h-4 w-4 text-indigo-500 shrink-0" />
                     <a href="mailto:support@fxmaster.com" className="hover:text-indigo-600 transition-colors">support@fxmaster.com</a>
                 </p>
                 <p className="flex items-center space-x-2 text-gray-600">
-                    <MapPin className="h-4 w-4 text-indigo-500 flex-shrink-0" />
+                    <MapPin className="h-4 w-4 text-indigo-500 shrink-0" />
                     <span>123 Global Exchange, London, UK</span>
                 </p>
             </div>

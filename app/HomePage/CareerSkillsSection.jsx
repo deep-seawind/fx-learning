@@ -14,18 +14,17 @@ import Mindset from "../../public/images/categories/image-2.jpg";
 import Fundamental from "../../public/images/categories/image-3.jpg";
 import Analysis from "../../public/images/categories/image-4.jpg";
 
-
 const careerCards = [
-    {
-        title: "Risk Management & Position Sizing",
-        learners: "8,920+",
-        img: ChartsImage,
-    },
-    {
-      title: "Technical Analysis: Candlesticks & Patterns",
-      learners: "12,500+",
-      img: Analysis,
-    },
+  {
+    title: "Risk Management & Position Sizing",
+    learners: "8,920+",
+    img: ChartsImage,
+  },
+  {
+    title: "Technical Analysis: Candlesticks & Patterns",
+    learners: "12,500+",
+    img: Analysis,
+  },
   {
     title: "Trading Psychology & Mindset",
     learners: "5,100+",
@@ -47,14 +46,13 @@ export default function CareerSkillsSection() {
 
   return (
     <section className="py-30 pb-10 bg-gray-50 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto  ">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
           {/* Left: Cotent */}
           <div className="col-span-2 ">
             <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tighter">
               Trade Smarter: <br />
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-cyan-500 to-blue-600 block sm:inline">
-                
+              <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 block sm:inline">
                 Essential Forex Learning
               </span>
             </h2>
@@ -74,17 +72,17 @@ export default function CareerSkillsSection() {
           </div>
 
           {/* Right: Swiper/Carousel */}
-          <div className="relative col-span-3"> 
+          <div className="relative col-span-3">
             <div className="absolute top-0 right-0 z-30 flex gap-3 -mt-10 md:-mt-18">
               <button
                 aria-label="Previous slide"
-                className="swiper-prev-btn p-3 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 border-gray-200 text-white shadow-md hover:bg-gray-100 transition duration-300"
+                className="swiper-prev-btn p-3 rounded-full bg-linear-to-r from-blue-500 to-indigo-600 border-gray-200 text-white shadow-md hover:bg-gray-100 transition duration-300"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 aria-label="Next slide"
-                className="swiper-next-btn p-3 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 border-gray-200 text-white shadow-md hover:bg-gray-100 transition duration-300"
+                className="swiper-next-btn p-3 rounded-full bg-linear-to-r from-blue-500 to-indigo-600 border-gray-200 text-white shadow-md hover:bg-gray-100 transition duration-300"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -96,7 +94,7 @@ export default function CareerSkillsSection() {
                 spaceBetween={30}
                 slidesPerView={1.05}
                 autoplay={{ delay: 4000, disableOnInteraction: false }}
-               loop={true}
+                loop={true}
                 navigation={{
                   nextEl: ".swiper-next-btn",
                   prevEl: ".swiper-prev-btn",
@@ -104,7 +102,7 @@ export default function CareerSkillsSection() {
                 pagination={{
                   clickable: true,
                   el: ".custom-swiper-pagination",
-                }} 
+                }}
                 className="py-10"
                 breakpoints={{
                   640: { slidesPerView: 1.2 },
@@ -114,8 +112,8 @@ export default function CareerSkillsSection() {
               >
                 {careerCards.map((card, idx) => (
                   <SwiperSlide key={idx} className="pb-10">
-                    <article className="rounded-3xl shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 group bg-gray-50">
-                      <div className="relative h-64 md:h-72 bg-gray-100 flex items-center justify-center overflow-hidden rounded-t-3xl">
+                    <article className="relative rounded-3xl bg-gray-50 overflow-visible group transition duration-300 hover:-translate-y-1">
+                      <div className="relative h-64 md:h-72 bg-gray-100 flex items-center justify-center overflow-hidden rounded-4xl">
                         <img
                           src={card.img.src}
                           alt={card.title}

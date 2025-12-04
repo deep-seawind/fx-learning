@@ -189,13 +189,19 @@ export default function CourseSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="container mx-auto px-6 py-16 pt-5">
-         <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center pb-16 text-transparent bg-clip-text bg-linear-to-r from-black to-gray-100 animate-slide-in-up">
-            Our featured  
-            <span className="inline-block bg-clip-text text-transparent bg-linear-to-r from-cyan-500 to-blue-600 drop-shadow-lg ps-2">
-               Courses
-            </span>
-          </h1>
+    <section className="container mx-auto py-16 pt-5">
+      <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center text-transparent bg-clip-text bg-linear-to-r from-black to-gray-100 animate-slide-in-up">
+        Our featured
+        <span className="inline-block bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 drop-shadow-lg ps-2">
+          Courses
+        </span>
+      </h1>
+
+      <p className="text-center text-gray-600 max-w-5xl mx-auto my-4 mb-8 animate-fade-in-up">
+        Learn from expert traders with real market experience. Master
+        strategies, gain confidence, and build the financial future you’ve
+        always wanted — one skill at a time.
+      </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
         {/* Sidebar */}
@@ -220,20 +226,20 @@ export default function CourseSection() {
                 <li
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`group flex items-center gap-4 py-3 px-4 rounded-xl cursor-pointer transition-all duration-200 ease-in-out active:scale-[0.99] transform
-                            ${
-                              isActive
-                                ? "active-glow-bg text-blue-800 bg-linear-to-r from-[#e7e4ff] to-[#f7f9ff] font-semibold shadow-lg shadow-blue-500/10"
-                                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900  "
-                            }`}
+                  className={`group flex items-center gap-4 py-3 px-2 rounded-full cursor-pointer transition-all duration-200 ease-in-out active:scale-[0.99] transform
+                              ${
+                                isActive
+                                  ? "active-glow-bg text-blue-800 bg-linear-to-r from-[#e7e4ff] to-[#f7f9ff] font-semibold shadow-lg shadow-blue-500/10"
+                                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900  "
+                              }`}
                 >
                   <div
                     className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 shrink-0
-                                ${
-                                  isActive
-                                    ? "bg-linear-to-br from-blue-600 to-indigo-700 shadow-md shadow-blue-500/30 "
-                                    : "bg-gray-200/50 group-hover:bg-gray-200"
-                                }`}
+                                  ${
+                                    isActive
+                                      ? "bg-linear-to-br from-blue-600 to-indigo-700 shadow-md shadow-blue-500/30 "
+                                      : "bg-gray-200/50 group-hover:bg-gray-200"
+                                  }`}
                   >
                     <cat.icon
                       className={`w-4 h-4 transition-colors duration-200`}
@@ -261,7 +267,7 @@ export default function CourseSection() {
           <h2 className="text-3xl font-semibold  text-gray-800 ">
             {categories[active].name}
           </h2>
-           <div className=" w-28 h-1.5 mb-10 rounded-full bg-linear-to-r from-blue-600 to-indigo-500 shadow-xl shadow-blue-500/50"></div>
+          <div className=" w-28 h-1.5 mb-10 rounded-full bg-linear-to-r from-blue-600 to-indigo-500 shadow-xl shadow-blue-500/50"></div>
 
           <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8">
             {(coursesByCategory[active] || []).map((course, i) => (
