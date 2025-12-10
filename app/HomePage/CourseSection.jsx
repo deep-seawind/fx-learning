@@ -35,9 +35,9 @@ const categories = [
 
 // ALL TAB COURSE DATA
 const coursesByCategory = {
-  0: [
+   0: [
     {
-      img: "/forex1.jpg",
+      img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=900&q=80",
       title: "Complete Forex Trading Mastery",
       uni: "Global Market Academy",
       duration: "8 Weeks",
@@ -46,8 +46,8 @@ const coursesByCategory = {
       rating: 4.8,
     },
     {
-      img: "/technical1.jpg",
-      title: "Technical Analysis: Chart Patterns Trading",
+      img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+      title: "Technical Analysis: Chart Patterns",
       uni: "Trading Experts Hub",
       duration: "6 Weeks",
       mode: "Online",
@@ -55,7 +55,7 @@ const coursesByCategory = {
       rating: 4.7,
     },
     {
-      img: "/risk1.jpg",
+      img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=900&q=80",
       title: "Risk & Money Management Masterclass",
       uni: "Finance IQ Institute",
       duration: "4 Weeks",
@@ -66,7 +66,7 @@ const coursesByCategory = {
   ],
   1: [
     {
-      img: "/forex2.jpg",
+      img: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=900&q=80",
       title: "Forex Trading for Beginners",
       uni: "Forex Academy Pro",
       duration: "6 Weeks",
@@ -75,8 +75,8 @@ const coursesByCategory = {
       rating: 4.6,
     },
     {
-      img: "/forex3.jpg",
-      title: "Institutional Forex Trading Strategies",
+      img: "https://images.unsplash.com/photo-1581093458791-9d16b1a57c4b?auto=format&fit=crop&w=900&q=80",
+      title: "Institutional Trading Strategies",
       uni: "Elite Traders Institute",
       duration: "10 Weeks",
       mode: "Online",
@@ -86,7 +86,7 @@ const coursesByCategory = {
   ],
   2: [
     {
-      img: "/technical2.jpg",
+      img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=900&q=80",
       title: "Price Action & Smart Money Concepts",
       uni: "Chart Masters",
       duration: "8 Weeks",

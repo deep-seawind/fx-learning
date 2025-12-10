@@ -1,101 +1,144 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
-  { name: "David McCall",      username: "@davemccall",    text: "Edumile’s courses provided practical skills and real-world experience, transforming my career growth." },
-  { name: "Mervin Cobb",       username: "@mervincobb01",  text: "Interactive content and support made online learning enjoyable and rewarding." },
-  { name: "Julian Munoz",      username: "@julianmunoz63", text: "Engaging lessons, hands-on projects, and certifications that employers truly value." },
-  { name: "Elvis Young",       username: "@elvisyoung",    text: "The intuitive platform and expert support made learning stress-free and effective." },
-  { name: "Jason Diaz",        username: "@jasondiaz29",   text: "The skills I gained through Edumile have been invaluable for advancing my career." },
-  { name: "Rob Sanchez",       username: "@robsanchez",    text: "The community kept me motivated in my journey. Amazing learning experience!" },
-  { name: "Chester H.",        username: "@chester3",      text: "Expert feedback and hands-on projects helped me build a strong professional portfolio." },
+  {
+    name: "David McCall",
+    username: "@davemccall",
+    text: "Edumile’s courses provided practical skills and real-world experience, transforming my career growth.",
+  },
+  {
+    name: "Mervin Cobb",
+    username: "@mervincobb01",
+    text: "Interactive content and support made online learning enjoyable and rewarding.",
+  },
+  {
+    name: "Julian Munoz",
+    username: "@julianmunoz63",
+    text: "Engaging lessons, hands-on projects, and certifications that employers truly value.",
+  },
+  {
+    name: "Elvis Young",
+    username: "@elvisyoung",
+    text: "The intuitive platform and expert support made learning stress-free and effective.",
+  },
+  {
+    name: "Jason Diaz",
+    username: "@jasondiaz29",
+    text: "The skills I gained through Edumile have been invaluable for advancing my career.",
+  },
+  {
+    name: "Rob Sanchez",
+    username: "@robsanchez",
+    text: "The community kept me motivated in my journey. Amazing learning experience!",
+  },
 ];
 
 const Avatar = ({ name, index }) => {
-  const colors = ["3B82F6","10B981","F59E0B","EF4444","6366F1","EC4899","06B6D4"];
-  const initials = name.split(" ").map(n => n[0]).join("");
-  const color = colors[index % colors.length];
+  const initials = name
+    .split(" ")
+    .map((n) => n[0])
+    .join("");
   return (
-    <img
-      src={`https://placehold.co/64x64/${color}/ffffff?text=${initials}`}
-      alt={name}
-      className="w-16 h-16 rounded-full border-2 border-gray-200"
-    />
-  );
-};
-
-const InfiniteRow = ({ direction = "left", speed = 60 }) => {
-  const items = useMemo(() => [...testimonials, ...testimonials], []);
-
-  return (
-    <div className="overflow-hidden py-4">
-      <div
-        className="flex"
-        style={{
-          animation: `${direction === "left" ? "scrollLeft" : "scrollRight"} ${speed}s linear infinite`,
-        }}
-      >
-        {items.map((t, i) => (
-          <div
-            key={i}
-            className="shrink-0 w-80 md:w-96 mx-4 bg-[#F4F7FB] rounded-2xl shadow-lg p-6 hover:scale-105 transition duration-300"
-          >
-            <div className="flex items-center gap-4 mb-4">
-              <Avatar name={t.name} index={i} />
-              <div>
-                <h4 className="font-semibold text-lg text-gray-900">{t.name}</h4>
-                <p className="text-blue-600 font-medium">{t.username}</p>
-              </div>
-            </div>
-            <p className="text-gray-700 italic text-sm">"{t.text}"</p>
-          </div>
-        ))}
-      </div>
+    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-linear-to-br from-blue-500 to-indigo-500 text-white font-bold text-lg shadow-md border-2 border-white">
+      {initials}
     </div>
   );
 };
 
 export default function Testimonials() {
   return (
-    <>
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-5xl font-bold text-gray-900">
-              Learners <span className="text-blue-600">Achieving Success</span> Worldwide
-            </h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover how our community enhances skills, transforms careers, and unlocks new opportunities.
-            </p>
-          </div>
-
-          {/* Scrolling Rows */}
-          <div className="relative mask-gradient">
-            <InfiniteRow direction="left"  speed={20} />
-            <InfiniteRow direction="right" speed={28} />
-          </div>
-
-        
+    <section className="py-18 bg-linear-to-b from-white to-blue-50 ">
+      <div className="container mx-auto relative lg:px-0 px-6">
+        {/* Heading */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tighter">
+            Loved by
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 block sm:inline ps-3">
+              50,000+ Learners
+            </span>
+          </h2>
+          <p className="text-lg text-gray-600 mt-2">
+            See what our community is saying about their learning experience.
+          </p>
         </div>
-      </section>
 
-      <style jsx>{`
-        @keyframes scrollLeft {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
-        }
-        @keyframes scrollRight {
-          from { transform: translateX(-50%); }
-          to   { transform: translateX(0); }
-        }
-        .mask-gradient {
-          mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-          -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-        }
-        .mask-gradient > div:hover > div { animation-play-state: paused; }
-      `}</style>
-    </>
+        <div className="absolute z-30 top-1/4 -translate-y-1/2 right-4 flex gap-3">
+          <button
+            aria-label="Previous slide"
+            className="swiper-prev-btn p-3 rounded-xl bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-xl hover:shadow-2xl transition duration-300 hover:scale-110"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            aria-label="Next slide"
+            className="swiper-next-btn p-3 rounded-xl bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-xl hover:shadow-2xl transition duration-300 hover:scale-110"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+        {/* Swiper Slider */}
+        <Swiper
+          modules={[Navigation, Autoplay, Pagination]}
+          autoplay={{ delay: 2800 }}
+          navigation={{
+            nextEl: ".swiper-next-btn",
+            prevEl: ".swiper-prev-btn",
+          }}
+          pagination={{ clickable: true }}
+          loop
+          spaceBetween={30}
+          slidesPerView={1.2}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1200: { slidesPerView: 3 },
+          }}
+          className="pb-14"
+        >
+          {testimonials.map((t, i) => (
+            <SwiperSlide key={i}>
+              <div className="bg-white/70 backdrop-blur-xl border border-zinc-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl p-8 relative my-10 mb-10 mx-2">
+                {/* Avatar */}
+                <div className="flex items-center gap-4 mb-5">
+                  <Avatar name={t.name} index={i} />
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900">
+                      {t.name}
+                    </h4>
+                    <p className="text-blue-600 font-medium">{t.username}</p>
+                  </div>
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-gray-700 text-md italic leading-relaxed">
+                  “{t.text}”
+                </p>
+
+                {/* Rating */}
+                <div className="flex gap-1 mt-5 text-yellow-400">
+                  {Array(5)
+                    .fill("")
+                    .map((_, idx) => (
+                      <span key={idx}>★</span>
+                    ))}
+                </div>
+
+                {/* Decorative highlight */}
+                <span className="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-blue-100 blur-2xl"></span>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
   );
 }

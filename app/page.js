@@ -7,6 +7,7 @@ import { KnowledgeSection } from './HomePage/KnowledgeSection'
 import Certificates from './HomePage/Certificates'
 import ForexFeatures from './HomePage/ForexFeatures'
 import TestimonialsSection from './HomePage/TestimonialsSection'
+import TrendingCourses from './HomePage/TrendingCourses'
 
 const page = () => {
   return (
@@ -16,9 +17,10 @@ const page = () => {
      <AICareerHero/> 
      <CourseSection/>
      <Certificates/>
+     <TrendingCourses/>
      <KnowledgeSection/>
      <ForexFeatures/>
-     <TestimonialsSection/>
+     <TestimonialsSection/> 
      </>
   )
 }

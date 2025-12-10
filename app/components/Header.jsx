@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-white backdrop-blur-md shadow-md transition-all duration-300">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8 py-4 flex items-center justify-between gap-6">
+      <div className="mx-auto container py-2 flex items-center justify-between gap-6">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <img src={Logo.src} alt="Logo" className="h-7 md:h-20" />
