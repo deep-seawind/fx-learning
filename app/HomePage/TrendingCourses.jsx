@@ -110,7 +110,7 @@ const getBadgeColor = (badge) => {
 
 export default function ForexCourseSlider() {
   return (
-    <section className="relative  py-20 pb-5 overflow-hidden">
+    <section className="relative py-20 pb-5 overflow-hidden">
       <div className="container mx-auto lg:px-0 px-4  relative z-10">
         {/* Premium Header */}
         <div className="text-center mb-5">
