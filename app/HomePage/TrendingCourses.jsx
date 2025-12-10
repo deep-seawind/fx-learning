@@ -150,7 +150,7 @@ export default function ForexCourseSlider() {
     <div className="absolute z-30 top-24 right-4 flex gap-3">
       <button
         aria-label="Previous"
-        className="swiper-prev-btn p-3 rounded-xl 
+        className="swiper-prev-btn p-3 rounded-lg 
         bg-[#2563EB]
         text-white shadow-lg hover:shadow-2xl 
         hover:scale-110 transition duration-300"
@@ -160,7 +160,7 @@ export default function ForexCourseSlider() {
 
       <button
         aria-label="Next"
-        className="swiper-next-btn p-3 rounded-xl 
+        className="swiper-next-btn p-3 rounded-lg 
         bg-linear-to-r from-[#0057ff] to-[#0036d6]
         text-white shadow-lg hover:shadow-2xl 
         hover:scale-110 transition duration-300"
@@ -196,7 +196,7 @@ export default function ForexCourseSlider() {
               whileHover={{ y: -8, scale: 1.03 }}
               className="group bg-white rounded-3xl shadow-xl border border-[#e9ecf5]
               overflow-hidden transition-all duration-500 cursor-pointer 
-              hover:shadow-2xl hover:border-[#0057ff40] mb-10"
+                hover:border-[#0057ff40] mb-10"
             >
 
               {/* Image */}

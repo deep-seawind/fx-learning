@@ -15,15 +15,15 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md backdrop-blur-lg">
-      <div className="container mx-auto py-3 flex items-center justify-between px-4 lg:px-8 gap-4">
+      <div className="container mx-auto py-3 flex items-center justify-between px-4 lg:px-8 gap-8">
 
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <img src={Logo.src} alt="Logo" className="h-10 md:h-18" />
+          <img src={Logo.src} alt="Logo" className="h-10 md:h-20" />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-10 flex-1">
+        <div className="hidden lg:flex items-center gap-8 flex-1">
 
           {/* Mega Menu */}
           <div className="relative group">

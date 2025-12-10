@@ -42,7 +42,7 @@ export default function Certificates() {
         >
           <h2 className="text-3xl lg:text-5xl font-semibold leading-tight tracking-tight text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400">
             Get certified and grow in <br />
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 ">
+            <span className="bg-clip-text text-transparent bg-[#2563EB]">
               Forex Trading
             </span>
           </h2>

@@ -26,7 +26,7 @@ export default function AICareerHero() {
           <div className="text-white space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight tracking-tight text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400">
               Master Your Skills in <br />
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 drop-shadow-lg">
+              <span className="bg-clip-text text-transparent bg-[#2563EB] drop-shadow-lg">
                 Forex Trading
               </span>
             </h1>
@@ -42,7 +42,7 @@ export default function AICareerHero() {
                   key={i}
                   className="flex items-center gap-2 text-gray-200 hover:text-white transition"
                 >
-                  <span className="p-2 bg-linear-to-br from-blue-600 to-indigo-700 rounded-full">
+                  <span className="p-2 bg-[#2563EB] rounded-full">
                     {item.icon}
                   </span>
                   <span className="text-sm md:text-base font-medium">
@@ -55,7 +55,7 @@ export default function AICareerHero() {
             <div className="pt-6">
               <Link
                 href="#"
-                className="font-medium px-6 py-3 rounded-lg bg-linear-to-r from-blue-600 to-indigo-700 shadow-lg
+                className="font-medium px-6 py-3 rounded-lg bg-[#2563EB] shadow-lg
                      hover:from-indigo-700 hover:to-blue-600 transition-all hover:-translate-y-0.5 active:scale-95"
               >
                 Start Learning

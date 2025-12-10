@@ -48,7 +48,7 @@ const Avatar = ({ name, index }) => {
     .map((n) => n[0])
     .join("");
   return (
-    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-linear-to-br from-blue-500 to-indigo-500 text-white font-bold text-lg shadow-md border-2 border-white">
+    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#2563EB] text-white font-bold text-lg shadow-md border-2 border-white">
       {initials}
     </div>
   );
@@ -62,7 +62,7 @@ export default function Testimonials() {
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tighter">
             Loved by
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 block sm:inline ps-3">
+            <span className="bg-clip-text text-transparent bg-[#2563EB] block sm:inline ps-3">
               50,000+ Learners
             </span>
           </h2>
@@ -74,14 +74,14 @@ export default function Testimonials() {
         <div className="absolute z-30 top-1/4 -translate-y-1/2 right-4 flex gap-3">
           <button
             aria-label="Previous slide"
-            className="swiper-prev-btn p-3 rounded-xl bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-xl hover:shadow-2xl transition duration-300 hover:scale-110"
+            className="swiper-prev-btn p-3 rounded-lg bg-[#2563EB] text-white shadow-xl hover:shadow-2xl transition duration-300 hover:scale-110"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             aria-label="Next slide"
-            className="swiper-next-btn p-3 rounded-xl bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-xl hover:shadow-2xl transition duration-300 hover:scale-110"
+            className="swiper-next-btn p-3 rounded-lg bg-[#2563EB] text-white shadow-xl hover:shadow-2xl transition duration-300 hover:scale-110"
           >
             <ChevronRight className="w-6 h-6" />
           </button>

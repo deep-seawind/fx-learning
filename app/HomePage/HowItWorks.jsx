@@ -40,7 +40,7 @@ export default function HowItWorks() {
       How It{" "}
       <span
         className="bg-clip-text text-transparent 
-        bg-linear-to-r from-[#0057ff] to-[#0036d6] 
+        bg-[#2563EB] 
         block sm:inline ps-3"
       >
         Works
@@ -73,10 +73,8 @@ export default function HowItWorks() {
               <div
                 className="text-white font-bold w-14 h-14 flex items-center justify-center 
                            rounded-full shadow-lg text-xl
-                           group-hover:scale-110 transition-transform"
-                style={{
-                  background: "linear-gradient(to right, #0036d6, #0057ff)",
-                }}
+                           group-hover:scale-110 transition-transform bg-[#2563EB]"
+                
               >
                 {index + 1}
               </div>

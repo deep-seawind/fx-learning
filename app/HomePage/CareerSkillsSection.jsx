@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
-import ChartsImage from "../../public/images/banners/banner-3.jpg";
+import ChartsImage from "../../public/images/images/banner-3.jpg";
 import Mindset from "../../public/images/categories/image-2.jpg";
 import Fundamental from "../../public/images/categories/image-3.jpg";
 import Analysis from "../../public/images/categories/image-4.jpg";
@@ -58,7 +58,7 @@ export default function CareerSkillsSection() {
               className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tighter"
             >
               Trade Smarter: <br />
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 block sm:inline">
+              <span className="bg-clip-text text-transparent bg-[#2563EB] block sm:inline">
                 Essential Forex Learning
               </span>
             </motion.h2>
@@ -80,13 +80,13 @@ export default function CareerSkillsSection() {
             <div className="absolute top-0 right-0 z-30 flex gap-3 -mt-16 md:-mt-18">
               <button
                 aria-label="Previous slide"
-                className="swiper-prev-btn p-3 rounded-full bg-linear-to-r from-blue-500 to-indigo-600 border-gray-200 text-white shadow-md hover:bg-gray-100 transition duration-300"
+                className="swiper-prev-btn p-3 rounded-lg bg-[#2563EB] border hover:border-[#2563EB] hover:text-[#2563EB] text-white shadow-md hover:bg-gray-100  transition duration-300"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 aria-label="Next slide"
-                className="swiper-next-btn p-3 rounded-full bg-linear-to-r from-blue-500 to-indigo-600 border-gray-200 text-white shadow-md hover:bg-gray-100 transition duration-300"
+                  className="swiper-prev-btn p-3 rounded-lg bg-[#2563EB] border hover:border-[#2563EB] hover:text-[#2563EB] text-white shadow-md hover:bg-gray-100  transition duration-300"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -148,7 +148,7 @@ export default function CareerSkillsSection() {
                             </h3>
                           </div>
 
-                          <div className="p-3 rounded-full border border-indigo-600 bg-indigo-600 text-white group-hover:bg-white group-hover:text-indigo-600 transition shadow-md">
+                          <div className="p-3 rounded-full border border-[#2563EB] bg-[#2563EB] text-white group-hover:bg-white group-hover:text-[#2563EB] transition shadow-md">
                             <ArrowRight className="w-5 h-5" />
                           </div>
                         </div>

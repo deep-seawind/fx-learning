@@ -218,143 +218,164 @@ export default function CourseSection() {
 
   return (
     <section className="container mx-auto py-16 pt-5">
-      <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-center animate-slide-in-up">
-        Our featured
-        <span className="inline-block bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 drop-shadow-lg ps-2">
-          Courses
-        </span>
-      </h1>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center mb-10"
+      >
+        <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-center animate-slide-in-up">
+          Our featured
+          <span className="inline-block bg-clip-text text-transparent bg-[#2563EB] drop-shadow-lg ps-2">
+            Courses
+          </span>
+        </h1>
 
-      <p className="text-center text-gray-600 max-w-5xl mx-auto my-4 mb-8 animate-fade-in-up">
-        Learn from expert traders with real market experience. Master
-        strategies, gain confidence, and build the financial future you’ve
-        always wanted — one skill at a time.
-      </p>
+        <p className="text-center text-gray-600 max-w-5xl mx-auto my-4 mb-8 animate-fade-in-up">
+          Learn from expert traders with real market experience. Master
+          strategies, gain confidence, and build the financial future you’ve
+          always wanted — one skill at a time.
+        </p>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
         {/* Sidebar */}
-        <div className="lg:col-span-1 bg-white rounded-3xl shadow-xl p-5 space-y-7 sticky lg:top-8 h-fit border border-gray-100 transition-all duration-300">
-          {/* Header Block */}
-          <div className="space-y-2 border-b pb-4 border-gray-100">
-            <h2 className="text-lg tracking-widest font-semibold  bg-linear-to-r from-[#6A11CB] via-[#2575FC] to-[#00E3FF] text-transparent bg-clip-text">
-              Fx Education Modules
-            </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center "
+        >
+          <div className="lg:col-span-1 bg-white rounded-3xl shadow-xl p-5 space-y-7 sticky lg:top-8 h-fit border border-gray-100 transition-all duration-300">
+            {/* Header Block */}
+            <div className="space-y-2 border-b pb-4 border-gray-100">
+              <h2 className="text-lg tracking-widest font-semibold  bg-linear-to-r from-[#0057ff] to-[#0036d6] text-transparent bg-clip-text">
+                Fx Education Modules
+              </h2>
 
-            <h3 className="text-xl text-gray-900 leading-snug">
-              Explore Trading Mastery Paths
-            </h3>
-          </div>
+              <h3 className="text-xl text-gray-900 leading-snug">
+                Explore Trading Mastery Paths
+              </h3>
+            </div>
 
-          {/* Category List */}
-          <ul className="space-y-2">
-            {categories.map((cat, i) => {
-              const isActive = active === i;
+            {/* Category List */}
+            <ul className="space-y-2">
+              {categories.map((cat, i) => {
+                const isActive = active === i;
 
-              return (
-                <li
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className={`group flex items-center gap-4 py-3 px-2 rounded-full cursor-pointer transition-all duration-200 ease-in-out active:scale-[0.99] transform
+                return (
+                  <li
+                    key={i}
+                    onClick={() => setActive(i)}
+                    className={`group flex items-center gap-4 py-3 px-2 rounded-full cursor-pointer transition-all duration-200 ease-in-out active:scale-[0.99] transform
                               ${
                                 isActive
                                   ? "active-glow-bg text-blue-800 bg-linear-to-r from-[#e7e4ff] to-[#f7f9ff] font-semibold shadow-lg shadow-blue-500/10"
                                   : "text-gray-600 hover:bg-gray-50 hover:text-gray-900  "
                               }`}
-                >
-                  <div
-                    className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 shrink-0
+                  >
+                    <div
+                      className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 shrink-0
                                   ${
                                     isActive
-                                      ? "bg-linear-to-br from-blue-600 to-indigo-700 shadow-md shadow-blue-500/30 "
+                                      ? "bg-[#2563EB] shadow-md shadow-blue-500/30 "
                                       : "bg-gray-200/50 group-hover:bg-gray-200"
                                   }`}
-                  >
-                    <cat.icon
-                      className={`w-4 h-4 transition-colors duration-200`}
-                      strokeWidth={isActive ? 2.5 : 1.8}
-                      color={isActive ? "white" : "#6B7280"}
-                    />
-                  </div>
-
-                  <span className="text-sm tracking-wide">{cat.name}</span>
-
-                  {isActive && (
-                    <Layers
-                      size={18}
-                      className="text-blue-500 ml-auto animate-pulse-slow"
-                    />
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        {/* Courses Grid */}
-        <div className="lg:col-span-3">
-          <h2 className="text-3xl font-semibold  text-gray-800 ">
-            {categories[active].name}
-          </h2>
-          <div className=" w-28 h-1.5 mb-10 rounded-full bg-linear-to-r from-blue-600 to-indigo-500 shadow-xl shadow-blue-500/50"></div>
-
-          <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8">
-            {(coursesByCategory[active] || []).map((course, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl premium-shadow overflow-hidden group hover:shadow-blue-300/50 hover:shadow-2xl shadow-lg shadow-zinc-300/50 cursor-pointer "
-              >
-                <div className="overflow-hidden relative h-40">
-                  {course.isBestSeller && (
-                    <div className="absolute top-4 left-4 z-10 bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg border-2 border-white">
-                      BESTSELLER
+                    >
+                      <cat.icon
+                        className={`w-4 h-4 transition-colors duration-200`}
+                        strokeWidth={isActive ? 2.5 : 1.8}
+                        color={isActive ? "white" : "#6B7280"}
+                      />
                     </div>
-                  )}
 
-                  <div
-                    style={{ backgroundImage: `url(${course.img})` }}
-                    className="w-full h-full bg-cover bg-center group-hover:scale-[1.08] group-hover:brightness-90 transition-all duration-500 relative"
-                  >
-                    <div className="absolute inset-0 bg-linear-to-t from-gray-900/40 to-transparent"></div>
-                  </div>
-                </div>
+                    <span className="text-sm tracking-wide">{cat.name}</span>
 
-                <div className="p-6 space-y-4">
-                  <h5 className="text-xs text-indigo-600 font-bold tracking-widest">
-                    {course.uni}
-                  </h5>
-
-                  <h3 className=" text-gray-900 leading-tight font-semibold line-clamp-1">
-                    {course.title}
-                  </h3>
-
-                  <div className="flex items-center justify-between border-t pt-4 border-gray-100">
-                    {/* Duration and Mode */}
-                    <p className="text-sm text-gray-600 font-medium flex items-center gap-1">
-                      <Clock size={16} className="text-indigo-400" />{" "}
-                      {course.duration}
-                    </p>
-
-                    {/* Rating Badge - Visually Stronger */}
-                    <div className="flex items-center gap-1 bg-yellow-400/20 px-3 py-1 rounded-full border border-yellow-500">
-                      <Star size={14} fill="#FACC15" color="#FACC15" />
-                      <span className="text-sm font-semibold text-yellow-800">
-                        {course.rating ? course.rating.toFixed(1) : "N/A"}
-                      </span>
-                    </div>
-                  </div>
-
-                  <span className="inline-block text-[11px] font-bold px-3 py-1 bg-blue-100 text-blue-700 rounded-lg">
-                    {course.tag}
-                  </span>
-
-                  <button className="w-full mt-3 flex items-center justify-center gap-2 text-blue-700 font-bold border-2 border-blue-600 rounded-xl py-2.5   group-hover:bg-blue-600 group-hover:text-white  group-hover:border-transparent transition-all duration-300 active:scale-[0.98]">
-                    <PlayCircle size={18} />
-                    Start Course
-                  </button>
-                </div>
-              </div>
-            ))}
+                    {isActive && (
+                      <Layers
+                        size={18}
+                        className="text-blue-500 ml-auto animate-pulse-slow"
+                      />
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
+        </motion.div>
+        {/* Courses Grid */}
+
+        <div className="lg:col-span-3">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className=" "
+          >
+            <h2 className="text-3xl font-semibold  text-gray-800 ">
+              {categories[active].name}
+            </h2>
+            <div className=" w-28 h-0.5 mb-10 rounded-full bg-[#2563EB] shadow-xl shadow-blue-500/50 mt-1"></div>
+
+            <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8">
+              {(coursesByCategory[active] || []).map((course, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl premium-shadow overflow-hidden group hover:shadow-blue-300/50 hover:shadow-2xl shadow-lg shadow-zinc-300/50 cursor-pointer "
+                >
+                  <div className="overflow-hidden relative h-40">
+                    {course.isBestSeller && (
+                      <div className="absolute top-4 left-4 z-10 bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg border-2 border-white">
+                        BESTSELLER
+                      </div>
+                    )}
+
+                    <div
+                      style={{ backgroundImage: `url(${course.img})` }}
+                      className="w-full h-full bg-cover bg-center group-hover:scale-[1.08] group-hover:brightness-90 transition-all duration-500 relative"
+                    >
+                      <div className="absolute inset-0 bg-linear-to-t from-gray-900/40 to-transparent"></div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 space-y-4">
+                    <h5 className="text-xs text-[#2563EB] font-bold tracking-widest">
+                      {course.uni}
+                    </h5>
+
+                    <h3 className=" text-gray-900 leading-tight font-semibold line-clamp-1">
+                      {course.title}
+                    </h3>
+
+                    <div className="flex items-center justify-between border-t pt-4 border-gray-100">
+                      {/* Duration and Mode */}
+                      <p className="text-sm text-gray-600 font-medium flex items-center gap-1">
+                        <Clock size={16} className="text-indigo-400" />{" "}
+                        {course.duration}
+                      </p>
+
+                      {/* Rating Badge - Visually Stronger */}
+                      <div className="flex items-center gap-1 bg-yellow-400/20 px-3 py-1 rounded-full border border-yellow-500">
+                        <Star size={14} fill="#FACC15" color="#FACC15" />
+                        <span className="text-sm font-semibold text-yellow-800">
+                          {course.rating ? course.rating.toFixed(1) : "N/A"}
+                        </span>
+                      </div>
+                    </div>
+
+                    <span className="inline-block text-[11px] font-bold px-3 py-1 bg-blue-100 text-blue-700 rounded-lg">
+                      {course.tag}
+                    </span>
+
+                    <button className="w-full mt-3 flex items-center justify-center gap-2 text-blue-700 font-bold border-2 border-blue-600 rounded-xl py-2.5   group-hover:bg-blue-600 group-hover:text-white  group-hover:border-transparent transition-all duration-300 active:scale-[0.98]">
+                      <PlayCircle size={18} />
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

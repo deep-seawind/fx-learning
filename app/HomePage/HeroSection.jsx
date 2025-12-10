@@ -3,40 +3,26 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Banner1 from "../../public/images/banners/FX-Education-banner1.jpg";
-import Banner2 from "../../public/images/banners/banner-2.jpg";
-import Banner3 from "../../public/images/banners/banner-3.jpg";
-import Banner4 from "../../public/images/banners/banner-4.jpg";
-import Banner5 from "../../public/images/banners/banner-5.jpg";
-import Banner6 from "../../public/images/banners/banner-6.jpg";
+import Banner1 from "../../public/images/banners/FX-Education-banner1.jpg"; 
+import Banner5 from "../../public/images/banners/FX-Education-banner2.jpg"; 
  
 
 const HeroSection = () => {
    const slides = [
     {
       id: 1,
-      title: "Master Forex Trading",
-      subtitle: "with Real-World Knowledge",
+      title: "Master Forex Trading With Real-World Guidance", 
       description:
-        "Learn Forex from industry experts with practical strategies, live market tools, and smart learning pathways.",
+        "Interactive courses, live webinars, expert mentors — all in one powerful learning platform",
       bg: Banner1, 
     },
     {
       id: 2,
-      title: "Learn & Trade Like Pros",
-      subtitle: "Boost Your Trading Skills",
+      title: "Learn & Trade Like Pros", 
       description:
         "Trade smarter with tools, analytics, and an international learning community all in one place.",
       bg: Banner5, 
-    },
-    {
-      id: 3,
-      title: "Build Confidence in the Markets",
-      subtitle: "Transform Your Knowledge into Success",
-      description:
-        "From fundamentals to advanced strategies — gain skills that help you trade like professionals.",
-      bg: Banner6, 
-    },
+    }, 
   ];
   return (
       <section className="w-full relative overflow-hidden bg-[#F9FBFC]">
@@ -51,9 +37,9 @@ const HeroSection = () => {
               className="relative w-full h-full bg-cover bg-center transition-transform duration-700"
               style={{ backgroundImage: `url(${slide.bg.src})` }}
             >
-              <div className="absolute inset-0 bg-[#020014]/20 "></div>
+              <div className="absolute inset-0 bg-[#020014]/30 "></div>
 
-              <div className="absolute top-0 left-0 w-full h-full">
+              <div className="absolute top-0 left-0 w-full h-screen">
                 {/* Graphics using a standard purple/indigo for utility compatibility */}
                 <svg
                   className="absolute top-0 right-0 w-1/2 h-full opacity-10 text-indigo-500"
@@ -72,10 +58,9 @@ const HeroSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 relative z-10">
                   {/* LEFT CONTENT */}
                   <div className="space-y-7 p-4 md:p-0 text-center md:text-left">
-                    <h1 className="text-6xl md:text-6xl font-semibold text-[#eeeeee] leading-tight drop-shadow-sm">
+                    <h1 className="text-4xl md:text-5xl font-semibold text-[#eeeeee] leading-tight drop-shadow-sm">
                       {slide.title}
-                    </h1>
- 
+                    </h1> 
 
                     <p className="text-gray-200 text-xl  leading-relaxed pt-2 mx-auto md:mx-0">
                       {slide.description}
@@ -85,10 +70,7 @@ const HeroSection = () => {
                       <a className="px-10 py-4 bg-linear-to-r from-[#4f39f6] to-[#7e73ff] rounded-full text-white font-bold text-lg tracking-wide shadow-2xl shadow-indigo-400/60 transition-all duration-300 hover:scale-[1.03] hover:shadow-indigo-500/80 transform translate-y-0 hover:-translate-y-0.5">
                         Get Started Now →
                       </a>
-
-                      <a className="px-10 py-4 border-2 border-gray-300 text-gray-600 bg-white rounded-full font-semibold text-lg transition-all duration-300 hover:border-[#4f39f6] hover:text-[#4f39f6] hover:bg-white">
-                        View Portfolio
-                      </a>
+ 
                     </div>
                   </div>
 
