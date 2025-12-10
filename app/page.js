@@ -1,5 +1,4 @@
-import React from 'react'
-import { HeroSection } from './HomePage/HeroSection'   
+import React from 'react' 
 import CareerSkillsSection from './HomePage/CareerSkillsSection'
 import AICareerHero from './HomePage/AICareerHero' 
 import CourseSection from './HomePage/CourseSection'
@@ -8,6 +7,8 @@ import Certificates from './HomePage/Certificates'
 import ForexFeatures from './HomePage/ForexFeatures'
 import TestimonialsSection from './HomePage/TestimonialsSection'
 import TrendingCourses from './HomePage/TrendingCourses'
+import HeroSection from './HomePage/HeroSection'
+import HowItWorks from './HomePage/HowItWorks'
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
      <CourseSection/>
      <Certificates/>
      <TrendingCourses/>
+     <HowItWorks/>
      <KnowledgeSection/>
      <ForexFeatures/>
      <TestimonialsSection/> 

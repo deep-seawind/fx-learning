@@ -9,9 +9,10 @@ import Banner3 from "../../public/images/banners/banner-3.jpg";
 import Banner4 from "../../public/images/banners/banner-4.jpg";
 import Banner5 from "../../public/images/banners/banner-5.jpg";
 import Banner6 from "../../public/images/banners/banner-6.jpg";
+ 
 
-export const HeroSection = () => {
-  const slides = [
+const HeroSection = () => {
+   const slides = [
     {
       id: 1,
       title: "Master Forex Trading",
@@ -40,9 +41,8 @@ export const HeroSection = () => {
       img: Banner3,
     },
   ];
-
   return (
-    <section className="w-full relative overflow-hidden bg-[#F9FBFC]">
+      <section className="w-full relative overflow-hidden bg-[#F9FBFC]">
       <Swiper
         loop
         autoplay={{ delay: 4500, disableOnInteraction: false }}
@@ -117,5 +117,7 @@ export const HeroSection = () => {
         ))}
       </Swiper>
     </section>
-  );
-};
+  )
+}
+
+export default HeroSection

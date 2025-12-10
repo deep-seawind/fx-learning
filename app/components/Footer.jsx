@@ -1,125 +1,141 @@
-import React from 'react';
-import Link from 'next/link';
-import { BarChart2, Zap, Mail, MapPin } from 'lucide-react'; 
-import Logo from "../../public/images/logo/FX-Education-logo.png"
+"use client";
 
+import React from "react";
+import Link from "next/link";
+import {
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Twitter,
+  Linkedin,
+} from "lucide-react";
+import Logo from "../../public/images/logo/FX-Education-logo.png";
 
 const footerLinks = [
   {
-    title: 'Platform',
+    title: "Platform",
     links: [
-      { name: 'Courses', href: '/courses' },
-      { name: 'Analytics Hub', href: '/analytics' },
-      { name: 'Pricing', href: '/pricing' },
-      { name: 'Roadmap', href: '/roadmap' },
+      { name: "Courses", href: "/courses" },
+      { name: "Analytics Hub", href: "/analytics" },
+      { name: "Pricing", href: "/pricing" },
+      { name: "Roadmap", href: "/roadmap" },
     ],
   },
   {
-    title: 'Company',
+    title: "Company",
     links: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Press', href: '/press' },
-      { name: 'Legal & Privacy', href: '/legal' },
+      { name: "About Us", href: "/about" },
+      { name: "Careers", href: "/careers" },
+      { name: "Press", href: "/press" },
+      { name: "Legal & Privacy", href: "/legal" },
     ],
   },
   {
-    title: 'Support',
+    title: "Support",
     links: [
-      { name: 'Help Center', href: '/support' },
-      { name: 'Contact Us', href: '/contact' },
-      { name: 'FAQ', href: '/faq' },
-      { name: 'System Status', href: '/status' },
+      { name: "Help Center", href: "/support" },
+      { name: "Contact Us", href: "/contact" },
+      { name: "FAQ", href: "/faq" },
+      { name: "System Status", href: "/status" },
     ],
   },
 ];
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="  bg-gray-50 border-t border-gray-200">
-      <div className="mx-auto container   py-12  md:py-16   lg:py-5">
-        
-        {/* Top Section: Call to Action (Floating Block) */}
-        {/* <div className="relative -mt-40 mb-16 rounded-4xl bg-white p-6 shadow-2xl ring-4 ring-indigo-50/50 sm:p-10 lg:p-14 transform transition-all duration-700 ease-in-out hover:scale-[1.01] hover:shadow-indigo-400/40">
-          <div className="flex flex-col items-center text-center sm:flex-row sm:justify-between sm:text-left">
-            
-            <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4 mb-4 sm:mb-0">
-              <div className="p-3 bg-indigo-100 rounded-full shrink-0 mb-4 sm:mb-0">
-                <Zap className="h-6 w-6 sm:h-8 sm:w-8 text-indigo-600" strokeWidth={1.5} />
-              </div>
-              <div className="text-center sm:text-left">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-900 tracking-tight">
-                  Ready to Master the Markets?
-                </h3>
-                <p className="text-gray-500 mt-1 text-sm sm:text-lg">
-                  Join over 50,000 successful traders today.
-                </p>
-              </div>
-            </div>
+    <footer className="relative bg-[#0C0F14] text-white overflow-hidden">
 
-            <Link
-              href="/signup"
-              className="rounded-full bg-indigo-600 px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg font-bold text-white shadow-xl shadow-indigo-400/60 transition-all duration-300 hover:bg-indigo-700 hover:shadow-indigo-500/80 hover:-translate-y-1"
-            >
-              Start Your Free Trial
-            </Link>
-          </div>
-        </div> */}
-        
-        {/* Main Grid Links Section */}
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-5 md:gap-y-10 mt-8">
-          
-          {/* Brand and Description Column */}
-          <div className="col-span-2 md:col-span-2">
-            <Link href="/" className="flex items-center space-x-2">
-                <img src={Logo.src} alt="Logo" className="h-7 md:h-20" />
-            </Link>
-            <p className="mt-4 text-sm sm:text-base text-gray-600 max-w-xs">
-              Precision learning for the future of foreign exchange trading. Built for clarity and confidence.
-            </p>
-            {/* Contact Info Group */}
-            <div className="mt-6 space-y-2 text-sm">
-                <p className="flex items-center space-x-2 text-gray-600">
-                    <Mail className="h-4 w-4 text-indigo-500 shrink-0" />
-                    <a href="mailto:support@fxmaster.com" className="hover:text-indigo-600 transition-colors">support@fxmaster.com</a>
-                </p>
-                <p className="flex items-center space-x-2 text-gray-600">
-                    <MapPin className="h-4 w-4 text-indigo-500 shrink-0" />
-                    <span>123 Global Exchange, London, UK</span>
-                </p>
-            </div>
-          </div>
+ 
 
-          {/* Navigation Links Columns */}
-          {footerLinks.map((section) => (
-            <div key={section.title} className="col-span-1">
-              <h4 className="text-base sm:text-lg font-extrabold text-gray-900 mb-4 sm:mb-5">{section.title}</h4>
-              <ul role="list" className="space-y-2 sm:space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-sm sm:text-base text-gray-600 transition-colors duration-200 hover:text-indigo-600 hover:opacity-90"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
+      <div className="container mx-auto pt-10 pb-5 relative z-10">
+
+        {/* GLASS CARD */}
+        <div className="rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-10 md:p-14 md:pb-5">
+
+          {/* GRID */}
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-5">
+
+            {/* BRAND */}
+            <div className="col-span-2 md:col-span-2">
+              <Link href="/" className="flex items-center space-x-2">
+                <img src={Logo.src} alt="Logo" className="h-18 opacity-90 rounded bg-white p-2" />
+              </Link>
+
+              <p className="mt-5 text-gray-300 text-sm max-w-xs leading-relaxed">
+                The world’s most intuitive Forex learning platform —
+                designed for clarity, confidence & real-world growth.
+              </p>
+
+              {/* CONTACT */}
+              <div className="mt-6 space-y-3 text-sm text-gray-300">
+                <p className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 text-blue-400" />
+                  <a
+                    href="mailto:support@fxmaster.com"
+                    className="hover:text-white transition"
+                  >
+                    support@fxmaster.com
+                  </a>
+                </p>
+
+                <p className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-blue-400" />
+                  <span>123 Global Exchange, London, UK</span>
+                </p>
+              </div>
+
+              {/* SOCIAL ICONS */}
+              <div className="mt-6 flex items-center gap-4">
+                {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
+                  <Link
+                    key={i}
+                    href="#"
+                    className="p-3 bg-white/10 border border-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition-all"
+                  >
+                    <Icon size={18} className="text-white opacity-90" />
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
-          ))}
 
-        </div>
+            {/* LINKS */}
+            {footerLinks.map((section) => (
+              <div key={section.title}>
+                <h4 className="text-lg font-semibold text-white mb-4">
+                  {section.title}
 
-        {/* Bottom Section: Copyright and Legal */}
-        <div className="mt-12 pt-6 border-t border-gray-200 sm:mt-16 sm:pt-8">
-          <p className="text-center text-xs sm:text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} FXMaster, Inc. All rights reserved. | Trading involves risk. Please trade responsibly.
-          </p>
+                  <span className="block w-12 h-1 mt-1 rounded-full bg-linear-to-r 
+                    from-[lab(54.1736%_13.3368_-74.6839)] 
+                    to-[lab(32.4486%_49.2217_-84.6695)]"
+                  ></span>
+                </h4>
+
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="relative text-gray-300 text-sm hover:text-white transition group"
+                      >
+                        {link.name}
+                        <span className="absolute left-0 bottom-0 h-px w-0 bg-white group-hover:w-full transition-all"></span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* BOTTOM */}
+          <div className="mt-14 pt-6 border-t border-white/10 text-center">
+            <p className="text-gray-200 text-sm">
+              © {new Date().getFullYear()} FXMaster™ — Learn Smarter. Trade Smarter.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

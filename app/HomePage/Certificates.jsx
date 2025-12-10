@@ -55,7 +55,7 @@ export default function Certificates() {
           <motion.button
             whileHover={{ x: 5 }}
             transition={{ duration: 0.3 }}
-            className="flex gap-2 items-center font-semibold mt-6 text-cyan-400 hover:text-cyan-300 transition-all duration-300"
+            className="flex gap-2 items-center font-semibold mt-6 text-amber-300 transition-all duration-300"
           >
             Explore Forex Courses <ArrowRight size={18} />
           </motion.button>
