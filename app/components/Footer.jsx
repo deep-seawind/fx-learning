@@ -45,27 +45,66 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer className="relative bg-[#0C0F14] text-white overflow-hidden">
-
- 
-
       <div className="container mx-auto pt-10 pb-5 relative z-10">
-
         {/* GLASS CARD */}
         <div className="rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-10 md:p-14 md:pb-5">
-
           {/* GRID */}
-          <div className="grid grid-cols-2 gap-10 md:grid-cols-5">
-
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-6">
             {/* BRAND */}
             <div className="col-span-2 md:col-span-2">
               <Link href="/" className="flex items-center space-x-2">
-                <img src={Logo.src} alt="Logo" className="h-18 opacity-90 rounded bg-white p-2" />
+                <img
+                  src={Logo.src}
+                  alt="Logo"
+                  className="h-18 opacity-90 rounded bg-white p-2"
+                />
               </Link>
 
               <p className="mt-5 text-gray-300 text-sm max-w-xs leading-relaxed">
-                The world’s most intuitive Forex learning platform —
-                designed for clarity, confidence & real-world growth.
+                The world’s most intuitive Forex learning platform — designed
+                for clarity, confidence & real-world growth.
               </p>
+            </div>
+
+            {/* LINKS */}
+            {footerLinks.map((section) => (
+              <div key={section.title}>
+                <h4 className="text-lg font-semibold text-white mb-4">
+                  {section.title}
+
+                  <span
+                    className="block w-12 h-1 mt-1 rounded-full bg-linear-to-r 
+                    from-[lab(54.1736%_13.3368_-74.6839)] 
+                    to-[lab(32.4486%_49.2217_-84.6695)]"
+                  ></span>
+                </h4>
+
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="relative text-gray-300 text-sm hover:text-white transition group"
+                      >
+                        {link.name}
+                        <span className="absolute left-0 bottom-0 h-px w-0 bg-white group-hover:w-full transition-all"></span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {/* BRAND */}
+            <div className=" ">
+              <h4 className="text-lg font-semibold text-white mb-4">
+                Contact
+                <span
+                  className="block w-12 h-1 mt-1 rounded-full bg-linear-to-r 
+                    from-[lab(54.1736%_13.3368_-74.6839)] 
+                    to-[lab(32.4486%_49.2217_-84.6695)]"
+                ></span>
+              </h4>
 
               {/* CONTACT */}
               <div className="mt-6 space-y-3 text-sm text-gray-300">
@@ -98,40 +137,13 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-
-            {/* LINKS */}
-            {footerLinks.map((section) => (
-              <div key={section.title}>
-                <h4 className="text-lg font-semibold text-white mb-4">
-                  {section.title}
-
-                  <span className="block w-12 h-1 mt-1 rounded-full bg-linear-to-r 
-                    from-[lab(54.1736%_13.3368_-74.6839)] 
-                    to-[lab(32.4486%_49.2217_-84.6695)]"
-                  ></span>
-                </h4>
-
-                <ul className="space-y-3">
-                  {section.links.map((link) => (
-                    <li key={link.name}>
-                      <Link
-                        href={link.href}
-                        className="relative text-gray-300 text-sm hover:text-white transition group"
-                      >
-                        {link.name}
-                        <span className="absolute left-0 bottom-0 h-px w-0 bg-white group-hover:w-full transition-all"></span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
 
           {/* BOTTOM */}
           <div className="mt-14 pt-6 border-t border-white/10 text-center">
             <p className="text-gray-200 text-sm">
-              © {new Date().getFullYear()} FXMaster™ — Learn Smarter. Trade Smarter.
+              © {new Date().getFullYear()} FXMaster™ — Learn Smarter. Trade
+              Smarter.
             </p>
           </div>
         </div>

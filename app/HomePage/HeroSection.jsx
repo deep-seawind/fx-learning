@@ -53,20 +53,7 @@ const HeroSection = () => {
               style={{ backgroundImage: `url(${slide.bg.src})` }}
             >
               <div className="absolute inset-0 bg-[#020014]/30 "></div>
-
-              <div className="absolute top-0 left-0 w-full h-screen">
-                {/* Graphics using a standard purple/indigo for utility compatibility */}
-                <svg
-                  className="absolute top-0 right-0 w-1/2 h-full opacity-10 text-indigo-500"
-                  viewBox="0 0 100 100"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M0,100 C60,-50 100,60 100,0 L100,100 Z"
-                  />
-                </svg>
-              </div>
+ 
 
               {/* Content Grid */}
               <div className="container mx-auto h-screen flex items-center justify-between px-8">

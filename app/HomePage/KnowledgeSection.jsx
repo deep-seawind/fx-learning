@@ -39,7 +39,7 @@ export const KnowledgeSection = () => {
     animateCounter(setSuccessRate, 98);
   }, [isInView]);
   return (
-  <section className="w-full bg-white py-16">
+  <section className="w-full bg-white py-16 pb-10">
   <div className="grid lg:grid-cols-2 gap-12 items-center container mx-auto">
 
     {/* LEFT CONTENT */}
@@ -97,21 +97,21 @@ export const KnowledgeSection = () => {
                    gap-6 pt-6 border-t border-gray-200"
       >
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900">
             {activeTraders.toLocaleString()}+
           </h3>
           <p className="text-xs sm:text-sm text-gray-500">Active Traders</p>
         </div>
 
         <div className="border-x border-gray-200 px-2">
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900">
             {experience}+ Years
           </h3>
           <p className="text-xs sm:text-sm text-gray-500">Experience</p>
         </div>
 
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900">
             {successRate}%
           </h3>
           <p className="text-xs sm:text-sm text-gray-500">Success Rate</p>
