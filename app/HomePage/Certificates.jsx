@@ -40,7 +40,7 @@ export default function Certificates() {
           viewport={{ once: true }}
           className="text-white"
         >
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="text-3xl lg:text-5xl font-semibold leading-tight tracking-tight text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400">
             Get certified and grow in <br />
             <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 ">
               Forex Trading
@@ -73,7 +73,7 @@ export default function Certificates() {
           {courses.map((course, index) => (
             <motion.div
               key={index}
-              className="bg-[#1B1F2E] rounded-2xl p-3 cursor-pointer 
+              className="bg-[#323541] rounded-2xl p-3 cursor-pointer 
                          hover:scale-[1.06] transition-all duration-300
                          shadow-md hover:shadow-cyan-600/20"
               whileHover={{ scale: 1.07 }}

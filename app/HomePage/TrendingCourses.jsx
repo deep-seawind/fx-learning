@@ -19,6 +19,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 const courses = [
   {
@@ -109,157 +110,195 @@ const getBadgeColor = (badge) => {
 };
 
 export default function ForexCourseSlider() {
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
   return (
-    <section className="relative py-20 pb-5 overflow-hidden">
-      <div className="container mx-auto lg:px-0 px-4  relative z-10">
-        {/* Premium Header */}
-        <div className="text-center mb-5">
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tighter">
-            Trending courses on
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 block sm:inline ps-3">
-              Fx Education
-            </span>
-          </h2>
+   <section className="relative py-20 pb-10 overflow-hidden bg-white">
+  <div className="container mx-auto px-4 lg:px-0 relative z-10">
 
-          <p className="text-gray-600 max-w-3xl mx-auto font-medium pt-2">
-            Learn from world-class traders and transform your financial future
-            with our curated courses
-          </p>
-        </div>
+    {/* Header */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="text-center mb-10"
+    >
+      <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tight">
+        Trending Courses on
+        <span className="bg-clip-text text-transparent 
+          bg-[#2563EB]
+          block sm:inline ps-3">
+          Fx Education
+        </span>
+      </h2>
 
-        {/* Slider Container */}
-        <div className="absolute z-30 top-1/6 -translate-y-1/2 right-4 flex gap-3">
-          <button
-            aria-label="Previous slide"
-            className="swiper-prev-btn p-3 rounded-xl bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-xl hover:shadow-2xl transition duration-300 hover:scale-110"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
+      <p className="text-gray-600 pt-3">
+        Learn from world-class traders & transform your financial future through curated, premium trading courses.
+      </p>
+    </motion.div>
 
-          <button
-            aria-label="Next slide"
-            className="swiper-next-btn p-3 rounded-xl bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-xl hover:shadow-2xl transition duration-300 hover:scale-110"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-        </div>
-        <div className="relative overflow-hidden pb-4 ">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            slidesPerView={4}
-            spaceBetween={30}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            loop={true}
-            navigation={{
-              nextEl: ".swiper-next-btn",
-              prevEl: ".swiper-prev-btn",
-            }}
-            pagination={{
-              clickable: true,
-              el: ".custom-swiper-pagination",
-            }}
-            className=" "
-            breakpoints={{
-              640: { slidesPerView: 1.5, spaceBetween: 20 },
-              768: { slidesPerView: 2.2, spaceBetween: 24 },
-              1024: { slidesPerView: 3, spaceBetween: 28 },
-              1280: { slidesPerView: 4, spaceBetween: 28 },
-            }}
-          >
-            {courses.map((course, i) => (
-              <SwiperSlide key={i} className="flex! h-auto! my-10">
-                <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-blue-200 hover:-translate-y-2 h-full cursor-pointer">
-                  {/* Image Container with Overlay */}
-                  <div className="relative w-full h-56 overflow-hidden">
-                    <img
-                      src={course.thumbnail}
-                      alt={course.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
- 
+    {/* Slider Controls */}
+    <div className="absolute z-30 top-24 right-4 flex gap-3">
+      <button
+        aria-label="Previous"
+        className="swiper-prev-btn p-3 rounded-xl 
+        bg-[#2563EB]
+        text-white shadow-lg hover:shadow-2xl 
+        hover:scale-110 transition duration-300"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
 
-                    {/* Play Button Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="bg-white/95 backdrop-blur-sm p-4 rounded-full shadow-2xl transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                        <Play className="w-8 h-8 text-blue-600 fill-blue-600" />
-                      </div>
-                    </div>
+      <button
+        aria-label="Next"
+        className="swiper-next-btn p-3 rounded-xl 
+        bg-linear-to-r from-[#0057ff] to-[#0036d6]
+        text-white shadow-lg hover:shadow-2xl 
+        hover:scale-110 transition duration-300"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+    </div>
 
-                    {/* Badge */}
-                    <div className="absolute top-4 left-4">
-                      <span
-                        className={`px-4 py-1.5 text-xs rounded-full font-bold shadow-lg ${getBadgeColor(
-                          course.badge
-                        )} backdrop-blur-sm`}
-                      >
-                        {course.badge}
-                      </span>
-                    </div>
+    {/* Swiper */}
+    <div className="relative overflow-hidden mt-16">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        slidesPerView={4}
+        spaceBetween={30}
+        autoplay={{ delay: 3500 }}
+        loop={true}
+        navigation={{ nextEl: ".swiper-next-btn", prevEl: ".swiper-prev-btn" }}
+        pagination={{ clickable: true, el: ".custom-swiper-pagination" }}
+        breakpoints={{
+          640: { slidesPerView: 1.2 },
+          768: { slidesPerView: 2.2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 4 },
+        }}
+      >
 
-                    {/* Quick Stats */}
-                    <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                      <div className="flex-1 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2 shadow-lg">
-                        <Users className="w-4 h-4 text-blue-600" />
-                        <span className="text-xs font-bold text-gray-800">
-                          {course.students}
-                        </span>
-                      </div>
-                      <div className="flex-1 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2 shadow-lg">
-                        <Clock className="w-4 h-4 text-indigo-600" />
-                        <span className="text-xs font-bold text-gray-800">
-                          {course.duration}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+        {courses.map((course, i) => (
+          <SwiperSlide key={i}>
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              whileHover={{ y: -8, scale: 1.03 }}
+              className="group bg-white rounded-3xl shadow-xl border border-[#e9ecf5]
+              overflow-hidden transition-all duration-500 cursor-pointer 
+              hover:shadow-2xl hover:border-[#0057ff40] mb-10"
+            >
 
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="font-bold text-gray-900 text-base line-clamp-2 mb-2 leading-snug group-hover:text-blue-600 transition-colors">
-                      {course.title}
-                    </h3>
+              {/* Image */}
+              <div className="relative w-full h-56 overflow-hidden">
+                <img
+                  src={course.thumbnail}
+                  alt={course.title}
+                  className="w-full h-full object-cover 
+                  transition-transform duration-300 group-hover:scale-110"
+                />
 
-                    <p className="text-sm text-gray-500 mb-4 flex items-center gap-1">
-                      <Award className="w-3.5 h-3.5" />
-                      {course.author}
-                    </p>
-
-                    {/* Rating */}
-                    <div className="flex items-center gap-3 mb-4 pb-4 border-b border-gray-100">
-                      <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        <span className="font-bold text-gray-900">
-                          {course.rating}
-                        </span>
-                      </div>
-                      <span className="text-gray-400 text-sm">
-                        ({course.reviews} reviews)
-                      </span>
-                    </div>
-
-                    {/* Pricing */}
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className="text-2xl bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-semibold">
-                          {course.price}
-                        </span>
-                        <span className="line-through text-gray-400 text-sm ml-2">
-                          {course.oldPrice}
-                        </span>
-                      </div>
-
-                      <button className="bg-linear-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-1">
-                        Enroll
-                        <ArrowRight className="w-4 h-4" />
-                      </button>
-                    </div>
+                {/* Play Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center 
+                  opacity-0 group-hover:opacity-100 transition duration-500">
+                  <div className="bg-white/90 backdrop-blur-md p-4 rounded-full shadow-2xl 
+                    scale-75 group-hover:scale-105 transition">
+                    <Play className="w-8 h-8 text-[#0057ff]" />
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-    </section>
+
+                {/* Badge */}
+                <span
+                  className={`absolute top-4 left-4 px-4 py-1.5 
+                  text-xs rounded-full font-bold shadow-md 
+                  ${getBadgeColor(course.badge)} 
+                  backdrop-blur-sm`}
+                >
+                  {course.badge}
+                </span>
+
+                {/* Stats */}
+                <div className="absolute bottom-4 left-4 right-4 flex gap-2">
+                  <div className="flex-1 bg-white/90 backdrop-blur-md rounded-lg px-3 py-2 
+                    flex items-center gap-2 shadow">
+                    <Users className="w-4 h-4 text-[#0057ff]" />
+                    <span className="text-xs font-bold text-gray-800">
+                      {course.students}
+                    </span>
+                  </div>
+
+                  <div className="flex-1 bg-white/90 backdrop-blur-md rounded-lg px-3 py-2 
+                    flex items-center gap-2 shadow">
+                    <Clock className="w-4 h-4 text-[#0036d6]" />
+                    <span className="text-xs font-bold text-gray-800">
+                      {course.duration}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="font-bold text-gray-900 text-base line-clamp-2 mb-2 
+                  group-hover:text-[#0057ff] transition-colors">
+                  {course.title}
+                </h3>
+
+                <p className="text-sm text-gray-500 mb-4 flex items-center gap-1">
+                  <Award className="w-4 h-4 text-gray-400" />
+                  {course.author}
+                </p>
+
+                {/* Rating */}
+                <div className="flex items-center gap-3 mb-4 pb-4 border-b border-gray-100">
+                  <div className="flex items-center gap-1">
+                    <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                    <span className="font-bold text-gray-900">{course.rating}</span>
+                  </div>
+                  <span className="text-gray-400 text-sm">
+                    ({course.reviews} reviews)
+                  </span>
+                </div>
+
+                {/* Price + Button */}
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-2xl bg-linear-to-r from-[#0057ff] to-[#0036d6]
+                      bg-clip-text text-transparent font-semibold">
+                      {course.price}
+                    </span>
+                    <span className="line-through text-gray-400 text-sm ml-2">
+                      {course.oldPrice}
+                    </span>
+                  </div>
+
+                  <button className="border border-[#2563EB]
+                    text-[#2563EB] px-4 py-2 rounded-xl font-semibold 
+                    text-sm shadow-md hover:shadow-xl hover:scale-105 transition-all 
+                    flex items-center gap-1">
+                    Enroll
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </SwiperSlide>
+        ))}
+
+      </Swiper>
+    </div>
+  </div>
+</section>
+
   );
 }

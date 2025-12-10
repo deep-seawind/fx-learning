@@ -17,6 +17,7 @@ import {
   Clock,
   Star,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 // UPDATED CATEGORIES FOR FX EDUCATION
 const categories = [
@@ -35,7 +36,34 @@ const categories = [
 
 // ALL TAB COURSE DATA
 const coursesByCategory = {
-   0: [
+  0: [
+    {
+      img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=900&q=80",
+      title: "Complete Forex Trading Mastery",
+      uni: "Global Market Academy",
+      duration: "8 Weeks",
+      mode: "Online",
+      tag: "Beginner to Pro",
+      rating: 4.8,
+    },
+    {
+      img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+      title: "Technical Analysis: Chart Patterns",
+      uni: "Trading Experts Hub",
+      duration: "6 Weeks",
+      mode: "Online",
+      tag: "Live Market Practice",
+      rating: 4.7,
+    },
+    {
+      img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=900&q=80",
+      title: "Risk & Money Management Masterclass",
+      uni: "Finance IQ Institute",
+      duration: "4 Weeks",
+      mode: "Online",
+      tag: "Learn Risk Control",
+      rating: 4.9,
+    },
     {
       img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=900&q=80",
       title: "Complete Forex Trading Mastery",
@@ -190,7 +218,7 @@ export default function CourseSection() {
 
   return (
     <section className="container mx-auto py-16 pt-5">
-      <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center text-transparent bg-clip-text bg-linear-to-r from-black to-gray-100 animate-slide-in-up">
+      <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-center animate-slide-in-up">
         Our featured
         <span className="inline-block bg-clip-text text-transparent bg-linear-to-r from-blue-500 to-indigo-600 drop-shadow-lg ps-2">
           Courses
@@ -218,7 +246,7 @@ export default function CourseSection() {
           </div>
 
           {/* Category List */}
-          <ul className="space-y-1">
+          <ul className="space-y-2">
             {categories.map((cat, i) => {
               const isActive = active === i;
 
@@ -295,7 +323,7 @@ export default function CourseSection() {
                     {course.uni}
                   </h5>
 
-                  <h3 className="text-xl text-gray-900 leading-tight font-semibold line-clamp-2 min-h-14">
+                  <h3 className=" text-gray-900 leading-tight font-semibold line-clamp-1">
                     {course.title}
                   </h3>
 

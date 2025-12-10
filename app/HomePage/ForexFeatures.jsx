@@ -30,7 +30,7 @@ export default function ForexFeatures() {
           variants={fadeUp}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
             The Core Pillars of Our Trading Education
           </h2>
           <p className="text-lg text-gray-600 mt-2">

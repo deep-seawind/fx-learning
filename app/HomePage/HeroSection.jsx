@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Banner1 from "../../public/images/banners/banner-1.jpg";
+import Banner1 from "../../public/images/banners/FX-Education-banner1.jpg";
 import Banner2 from "../../public/images/banners/banner-2.jpg";
 import Banner3 from "../../public/images/banners/banner-3.jpg";
 import Banner4 from "../../public/images/banners/banner-4.jpg";
@@ -19,8 +19,7 @@ const HeroSection = () => {
       subtitle: "with Real-World Knowledge",
       description:
         "Learn Forex from industry experts with practical strategies, live market tools, and smart learning pathways.",
-      bg: Banner4,
-      img: Banner1,
+      bg: Banner1, 
     },
     {
       id: 2,
@@ -28,8 +27,7 @@ const HeroSection = () => {
       subtitle: "Boost Your Trading Skills",
       description:
         "Trade smarter with tools, analytics, and an international learning community all in one place.",
-      bg: Banner5,
-      img: Banner2,
+      bg: Banner5, 
     },
     {
       id: 3,
@@ -37,8 +35,7 @@ const HeroSection = () => {
       subtitle: "Transform Your Knowledge into Success",
       description:
         "From fundamentals to advanced strategies — gain skills that help you trade like professionals.",
-      bg: Banner6,
-      img: Banner3,
+      bg: Banner6, 
     },
   ];
   return (
@@ -54,7 +51,7 @@ const HeroSection = () => {
               className="relative w-full h-full bg-cover bg-center transition-transform duration-700"
               style={{ backgroundImage: `url(${slide.bg.src})` }}
             >
-              <div className="absolute inset-0 bg-[#020014]/80 "></div>
+              <div className="absolute inset-0 bg-[#020014]/20 "></div>
 
               <div className="absolute top-0 left-0 w-full h-full">
                 {/* Graphics using a standard purple/indigo for utility compatibility */}
@@ -71,19 +68,16 @@ const HeroSection = () => {
               </div>
 
               {/* Content Grid */}
-              <div className="container mx-auto h-screen flex items-center justify-center px-8">
+              <div className="container mx-auto h-screen flex items-center justify-between px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 relative z-10">
                   {/* LEFT CONTENT */}
                   <div className="space-y-7 p-4 md:p-0 text-center md:text-left">
                     <h1 className="text-6xl md:text-6xl font-semibold text-[#eeeeee] leading-tight drop-shadow-sm">
                       {slide.title}
                     </h1>
+ 
 
-                    <h2 className="text-3xl font-medium text-[#4f39f6] pt-1 border-l-4 md:border-l-4 border-indigo-300 pl-4 md:pl-4 inline-block">
-                      {slide.subtitle}
-                    </h2>
-
-                    <p className="text-gray-200 text-xl max-w-lg leading-relaxed pt-2 mx-auto md:mx-0">
+                    <p className="text-gray-200 text-xl  leading-relaxed pt-2 mx-auto md:mx-0">
                       {slide.description}
                     </p>
 
@@ -99,17 +93,7 @@ const HeroSection = () => {
                   </div>
 
                   {/* RIGHT IMAGE */}
-                  <div className="flex justify-center relative">
-                    <div className="  w-full">
-                      <img
-                        src={slide.img.src}
-                        alt="Professional Digital Asset"
-                        className="rounded-4xl w-full h-96 object-cover "
-                      />
-                    </div>
-
-                    <div className="absolute -top-10 -right-10 w-40 h-40 border-8 border-dashed border-[#7e73ff]/50 rounded-full opacity-60 animate-spin-slow hidden md:block"></div>
-                  </div>
+                   
                 </div>
               </div>
             </div>
