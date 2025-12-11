@@ -66,7 +66,7 @@ export default function Testimonials() {
               50,000+ Learners
             </span>
           </h2>
-          <p className="text-lg text-gray-600 mt-2">
+          <p className="  text-gray-600 mt-2">
             See what our community is saying about their learning experience.
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function Testimonials() {
         >
           {testimonials.map((t, i) => (
             <SwiperSlide key={i}>
-              <div className="bg-white/70 backdrop-blur-xl border border-zinc-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl p-5 relative my-10 mb-10 mx-2">
+              <div className="bg-white/70 backdrop-blur-xl border border-zinc-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-4xl p-5 relative my-10 mb-10 mx-2">
                 {/* Avatar */}
                 <div className="flex items-center gap-4 mb-5">
                   <Avatar name={t.name} index={i} />

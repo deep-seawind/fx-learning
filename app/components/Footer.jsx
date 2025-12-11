@@ -10,7 +10,8 @@ import {
   Twitter,
   Linkedin,
 } from "lucide-react";
-import Logo from "../../public/images/logo/FX-Education-logo.png";
+import Logo from "../../public/images/logo/FX-Education-logo-1.png";
+import { FaXTwitter } from "react-icons/fa6";
 
 const footerLinks = [
   {
@@ -108,25 +109,31 @@ export default function Footer() {
 
               {/* CONTACT */}
               <div className="mt-6 space-y-3 text-sm text-gray-300">
-                <p className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-blue-400" />
-                  <a
+                <p className="flex items-baseline gap-2">
+                  <span>
+                     <Mail className="h-4 w-4 text-blue-400" />
+                  </span>
+                 
+                  <Link
                     href="mailto:support@fxmaster.com"
                     className="hover:text-white transition"
                   >
                     support@fxmaster.com
-                  </a>
+                  </Link>
                 </p>
 
-                <p className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-blue-400" />
+                <p className="flex items-baseline gap-2">
+                  <span>
+                     <MapPin className="h-4 w-4 text-blue-400" />
+                  </span>
+                 
                   <span>123 Global Exchange, London, UK</span>
                 </p>
               </div>
 
               {/* SOCIAL ICONS */}
               <div className="mt-6 flex items-center gap-4">
-                {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
+                {[Facebook, Instagram, FaXTwitter, Linkedin].map((Icon, i) => (
                   <Link
                     key={i}
                     href="#"

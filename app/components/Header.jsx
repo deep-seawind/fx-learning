@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X, Search } from "lucide-react";
-import Logo from "../../public/images/logo/FX-Education-logo.png";
+import Logo from "../../public/images/logo/FX-Education-logo-1.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

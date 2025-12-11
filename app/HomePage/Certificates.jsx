@@ -29,8 +29,8 @@ const fadeUp = {
 };
 export default function Certificates() {
   return (
-    <section className="w-full bg-[#131722] rounded-4xl py-16 px-6 md:px-16 mt-10 container mx-auto">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+    <section className="w-full bg-[#131722] rounded-4xl py-16 px-6 md:px-8 mt-16 container mx-auto">
+      <div className="grid md:grid-cols-5 gap-8 items-center">
         {/* LEFT TEXT SECTION */}
         <motion.div
           variants={fadeUp}
@@ -38,7 +38,7 @@ export default function Certificates() {
           whileInView="visible"
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-white"
+          className="text-white col-span-2"
         >
           <h2 className="text-3xl lg:text-5xl font-semibold leading-tight tracking-tight text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400">
             Get certified and grow in <br />
@@ -47,7 +47,7 @@ export default function Certificates() {
             </span>
           </h2>
 
-          <p className="text-gray-300 text-lg mt-4 max-w-md">
+          <p className="text-gray-300 mt-4">
             Learn Forex trading with structured programs, real-market
             strategies, and mentorship from experienced professional traders.
           </p>
@@ -68,7 +68,7 @@ export default function Certificates() {
           whileInView="visible"
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 col-span-3 "
         >
           {courses.map((course, index) => (
             <motion.div

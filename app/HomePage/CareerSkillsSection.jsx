@@ -10,9 +10,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
 import ChartsImage from "../../public/images/images/banner-3.jpg";
-import Mindset from "../../public/images/categories/image-2.jpg";
+import Mindset from "../../public/images/categories/image-6.jpg";
 import Fundamental from "../../public/images/categories/image-3.jpg";
-import Analysis from "../../public/images/categories/image-4.jpg";
+import Analysis from "../../public/images/categories/image-5.jpg";
 import { motion } from "framer-motion";
 
 const careerCards = [
@@ -20,11 +20,6 @@ const careerCards = [
     title: "Risk Management & Position Sizing",
     learners: "8,920+",
     img: ChartsImage,
-  },
-  {
-    title: "Technical Analysis: Candlesticks & Patterns",
-    learners: "12,500+",
-    img: Analysis,
   },
   {
     title: "Trading Psychology & Mindset",
@@ -35,6 +30,11 @@ const careerCards = [
     title: "Fundamental Forex Drivers (NFP, CPI)",
     learners: "15,300+",
     img: Fundamental,
+  },
+  {
+    title: "Technical Analysis: Candlesticks & Patterns",
+    learners: "12,500+",
+    img: Analysis,
   },
 ];
 

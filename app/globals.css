@@ -60,3 +60,12 @@ body {
 .gradient-mask {
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
+
+.bg-customs{ 
+background: linear-gradient(30deg, #de9f17 2%, #cf9a15 31%, #fff68a 68%, #ffcf45 96%);
+color: black;
+}
+.bg-customs:hover{ 
+background: #2563eb;
+color: white;
+}
