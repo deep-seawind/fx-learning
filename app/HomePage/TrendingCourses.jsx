@@ -163,9 +163,9 @@ export default function ForexCourseSlider() {
 
         {/* Swiper */}
         <div className="relative overflow-hidden mt-18">
-         <Swiper
+<Swiper
   modules={[Navigation, Autoplay]}
-  slidesPerView={1} // Default for mobile
+  slidesPerView={1} 
   spaceBetween={20}
   autoplay={{ delay: 3500, disableOnInteraction: false }}
   loop={true}
@@ -174,12 +174,15 @@ export default function ForexCourseSlider() {
     prevEl: ".swiper-prev-btn",
   }}
   breakpoints={{
-    640: { slidesPerView: 1, spaceBetween: 20 },
-    768: { slidesPerView: 2, spaceBetween: 30 },
-    1024: { slidesPerView: 3, spaceBetween: 35 },
-    1280: { slidesPerView: 4, spaceBetween: 40 },
+    640: { slidesPerView: 1, spaceBetween: 20 },     // Mobile
+    768: { slidesPerView: 2, spaceBetween: 25 },     // Tablets
+    1024: { slidesPerView: 3, spaceBetween: 30 },    // Small laptops
+    1280: { slidesPerView: 3, spaceBetween: 35 },    // Surface Pro 7 (1280px)
+    1368: { slidesPerView: 3, spaceBetween: 35 },    // Standard desktops/laptops
+    1440: { slidesPerView: 4, spaceBetween: 40 },    // Large desktops
   }}
 >
+
 
             {courses.map((course, i) => (
               <SwiperSlide key={i}>

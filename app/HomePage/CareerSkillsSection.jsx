@@ -47,7 +47,7 @@ export default function CareerSkillsSection() {
 
   return (
     <section className="py-30 pb-10 bg-gray-50 overflow-hidden lg:px-0 px-4">
-      <div className="container mx-auto  ">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
           {/* Left: Content */}
           <div className="col-span-2 space-y-6">
@@ -58,7 +58,7 @@ export default function CareerSkillsSection() {
               className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tighter"
             >
               Trade Smarter: <br />
-              <span className="bg-clip-text text-transparent bg-[#2563EB] block sm:inline">
+              <span className="bg-clip-text text-transparent bg-[#2563EB] block sm:inline text-4xl xl:text-5xl">
                 Essential Forex Learning
               </span>
             </motion.h2>

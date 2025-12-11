@@ -25,7 +25,7 @@ export default function AICareerHero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
           {/* LEFT CONTENT */}
           <div className="text-white space-y-6">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl xl:text-5xl font-semibold leading-tight tracking-tight">
               Master Your Skills in <br />
               Forex Trading
             </h1>
@@ -71,7 +71,7 @@ export default function AICareerHero() {
             <img
               src={ForexLearning.src}
               alt="Forex Education Trader"
-              className="rounded-4xl w-full max-w-md lg:max-w-full h-auto object-cover"
+              className="rounded-4xl w-full max-w-md lg:max-w-full h-full object-cover"
             />
           </div>
         </div>

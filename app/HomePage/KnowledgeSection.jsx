@@ -196,8 +196,7 @@ export const KnowledgeSection = () => {
           <div className="rounded-4xl overflow-hidden shadow-md">
             <Image
               src={ForexChart}
-              height={500}
-              width={100}
+              height={500} 
               alt="Forex chart"
               className="w-full h-48 sm:h-64 md:h-140 object-cover rounded-4xl"
             />

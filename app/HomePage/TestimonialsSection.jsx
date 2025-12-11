@@ -102,13 +102,13 @@ export default function Testimonials() {
     640: { slidesPerView: 1, spaceBetween: 20 },
     768: { slidesPerView: 2, spaceBetween: 30 },
     1024: { slidesPerView: 3, spaceBetween: 35 },
-    1280: { slidesPerView: 4, spaceBetween: 40 },
+    1280: { slidesPerView: 3, spaceBetween: 30 }, 
   }}
           className="pb-14"
         >
           {testimonials.map((t, i) => (
             <SwiperSlide key={i}>
-              <div className="bg-white/70 backdrop-blur-xl border border-zinc-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-4xl p-5 relative my-10 mb-10 mx-2">
+              <div className="bg-white/70 backdrop-blur-xl border border-zinc-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-4xl p-5 relative my-10 mb-10 mx-2 h-58">
                 {/* Avatar */}
                 <div className="flex items-center gap-4 mb-5">
                   <Avatar name={t.name} index={i} />

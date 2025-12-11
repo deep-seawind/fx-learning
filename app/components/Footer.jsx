@@ -50,9 +50,9 @@ export default function Footer() {
         {/* GLASS CARD */}
         <div className="rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-10 md:p-14 md:pb-5">
           {/* GRID */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:grid-cols-6">
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
             {/* BRAND */}
-            <div className="col-span-1 md:col-span-2">
+            <div className="col-span-1 md:col-span-2 lg:col-span-1">
               <Link href="/" className="flex items-center space-x-2">
                 <img
                   src={Logo.src}
