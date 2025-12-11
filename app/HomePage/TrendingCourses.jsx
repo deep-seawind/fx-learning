@@ -275,7 +275,7 @@ export default function ForexCourseSlider() {
 
                       {/* Price */}
                       <div>
-                        <span className="text-2xl font-bold text-[#0049ac]">
+                        <span className="text-2xl font-semibold text-[#0049ac]">
                           {course.price}
                         </span>
                         <span className="line-through text-gray-400 text-sm ml-2">

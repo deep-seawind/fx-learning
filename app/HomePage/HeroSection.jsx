@@ -69,7 +69,7 @@ const HeroSection = () => {
                     </p>
 
                     <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
-                      <a className="px-10 py-4 bg-linear-to-r from-[#4f39f6] to-[#7e73ff] rounded-full text-white font-bold text-lg tracking-wide shadow-2xl shadow-indigo-400/60 transition-all duration-300 hover:scale-[1.03] hover:shadow-indigo-500/80 transform translate-y-0 hover:-translate-y-0.5">
+                      <a className="px-10 py-4 bg-linear-to-r from-[#2563EB] to-[#2563EB] rounded-full text-white font-bold text-lg tracking-wide shadow-2xl shadow-blue-400/60 transition-all duration-300 hover:scale-[1.03] hover:shadow-blue-500/80 transform translate-y-0 hover:-translate-y-0.5">
                         Get Started Now →
                       </a>
                     </div>

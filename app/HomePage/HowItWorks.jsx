@@ -36,7 +36,7 @@ export default function HowItWorks() {
       transition={{ duration: 0.6 }}
       className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tighter"
     >
-      How It{" "}
+      How It 
       <span
         className="bg-clip-text text-transparent 
         bg-[#2563EB] 
@@ -46,10 +46,11 @@ export default function HowItWorks() {
       </span>
     </motion.h2>
 
-    <p className="text-gray-600 max-w-2xl mx-auto mb-12 pt-2">
-      A beautifully simplified 4-step learning flow designed for perfect
-      results.
-    </p>
+  <p className="text-gray-600 max-w-4xl mx-auto mb-12 pt-2">
+  A beautifully simplified 4-step learning flow designed for perfect results —
+  helping you learn smarter, stay consistent, and build real long-term skills.
+</p>
+
 
     {/* Steps */}
     <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-4">
@@ -68,7 +69,7 @@ export default function HowItWorks() {
               hover:border-[#2563eb] hover:shadow-blue-300/50 hover:scale-[1.03]"
           >
             {/* Background Gradient Layer */}
-            <div className="absolute inset-0 bg-linear-to-br from-blue-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-white to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
 
             <div className="relative z-10">
 
