@@ -55,10 +55,10 @@ export default function CareerSkillsSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tighter"
+              className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tight"
             >
               Trade Smarter: <br />
-              <span className="bg-clip-text text-transparent bg-[#2563EB] block sm:inline text-4xl xl:text-5xl">
+              <span className="bg-clip-text text-transparent bg-[#2563EB] block sm:inline   xl:text-4xl 2xl:text-5xl">
                 Essential Forex Learning
               </span>
             </motion.h2>

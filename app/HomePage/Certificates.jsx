@@ -43,7 +43,7 @@ export default function Certificates() {
           viewport={{ once: true }}
           className="text-white col-span-2"
         >
-          <h2 className="text-2xl lg:text-5xl font-semibold leading-tight tracking-tight ">
+          <h2 className="text-2xl lg:text-5xl xl:text-4xl 2xl:text-5xl font-semibold leading-tight tracking-tight ">
             Get certified and grow in <br />
             Forex Trading
           </h2>
