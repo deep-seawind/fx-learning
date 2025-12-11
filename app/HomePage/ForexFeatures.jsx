@@ -41,7 +41,7 @@ export default function ForexFeatures() {
           variants={fadeUp}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
+          <h2 className="text-2xl md:text-5xl font-semibold text-gray-900 leading-tight">
             The Core Pillars of Our Trading Education
           </h2>
 
@@ -171,6 +171,8 @@ export default function ForexFeatures() {
       
       </div>
 </div>
+
+        <div className="mx-4 lg:mx-0">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -213,6 +215,7 @@ export default function ForexFeatures() {
             </motion.button>
           </div>
         </motion.div>
+        </div>
     </section>
   );
 }

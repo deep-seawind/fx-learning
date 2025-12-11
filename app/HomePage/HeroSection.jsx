@@ -34,7 +34,7 @@ const HeroSection = () => {
           disableOnInteraction: false,
           pauseOnMouseEnter: false,
         }}
-        className="w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen"
+        className="w-full h-screen"
         spaceBetween={0}
         slidesPerView={1}
         breakpoints={{
@@ -56,7 +56,7 @@ const HeroSection = () => {
  
 
               {/* Content Grid */}
-              <div className="container mx-auto h-screen flex items-center justify-between px-8">
+              <div className="container mx-auto h-screen flex items-center justify-between lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 relative z-10">
                   {/* LEFT CONTENT */}
                   <div className="space-y-7 p-4 md:p-0 text-center md:text-left">

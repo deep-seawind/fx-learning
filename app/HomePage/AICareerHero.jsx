@@ -19,6 +19,7 @@ export default function AICareerHero() {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
+      className="px-4 lg:px-0"
     >
       <section className="bg-[#131722] bg-[radial-gradient(circle_at_center,#1d4ed8_0%,#131722_65%)] rounded-4xl py-12 mb-20 mt-10 px-6 md:px-10 lg:px-16 container mx-auto overflow-hidden shadow-xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">

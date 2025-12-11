@@ -267,7 +267,7 @@ export default function CourseSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className=" py-16 pt-10 bg-gray-100">
+    <section className=" py-16 pt-10 bg-gray-100 lg:px-0 px-4">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

@@ -30,7 +30,9 @@ const fadeUp = {
 };
 export default function Certificates() {
   return (
-    <section className="w-full bg-[#131722] bg-[radial-gradient(circle_at_center,#1d4ed8_0%,#131722_65%)] rounded-4xl py-16 px-6 md:px-8 mt-16 container mx-auto">
+    <section className=" lg:mt-16 px-4 lg:px-0">
+
+      <div className="container mx-auto w-full bg-[#131722] bg-[radial-gradient(circle_at_center,#1d4ed8_0%,#131722_65%)]  rounded-4xl py-16 px-6 md:px-8">
       <div className="grid md:grid-cols-5 gap-8 items-center">
         {/* LEFT TEXT SECTION */}
         <motion.div
@@ -41,7 +43,7 @@ export default function Certificates() {
           viewport={{ once: true }}
           className="text-white col-span-2"
         >
-          <h2 className="text-3xl lg:text-5xl font-semibold leading-tight tracking-tight ">
+          <h2 className="text-2xl lg:text-5xl font-semibold leading-tight tracking-tight ">
             Get certified and grow in <br />
             Forex Trading
           </h2>
@@ -96,6 +98,7 @@ export default function Certificates() {
             </motion.div>
           ))}
         </motion.div>
+      </div>
       </div>
     </section>
   );

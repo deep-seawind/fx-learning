@@ -39,8 +39,7 @@ export default function HowItWorks() {
       How It 
       <span
         className="bg-clip-text text-transparent 
-        bg-[#2563EB] 
-        block sm:inline ps-3"
+        bg-[#2563EB] ps-3"
       >
         Works
       </span>

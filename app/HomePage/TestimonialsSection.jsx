@@ -62,7 +62,7 @@ export default function Testimonials() {
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tighter">
             Loved by
-            <span className="bg-clip-text text-transparent bg-[#2563EB] block sm:inline ps-3">
+            <span className="bg-clip-text text-transparent bg-[#2563EB] ps-3">
               50,000+ Learners
             </span>
           </h2>
@@ -97,11 +97,13 @@ export default function Testimonials() {
           pagination={{ clickable: true }}
           loop
           spaceBetween={30}
-          slidesPerView={1.2}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 },
-          }}
+          slidesPerView={1}
+           breakpoints={{
+    640: { slidesPerView: 1, spaceBetween: 20 },
+    768: { slidesPerView: 2, spaceBetween: 30 },
+    1024: { slidesPerView: 3, spaceBetween: 35 },
+    1280: { slidesPerView: 4, spaceBetween: 40 },
+  }}
           className="pb-14"
         >
           {testimonials.map((t, i) => (

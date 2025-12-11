@@ -19,7 +19,7 @@ export default function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <img src={Logo.src} alt="Logo" className="h-10 md:h-20" />
+          <img src={Logo.src} alt="Logo" className="h-16 md:h-20" />
         </Link>
 
         {/* Desktop Navigation */}

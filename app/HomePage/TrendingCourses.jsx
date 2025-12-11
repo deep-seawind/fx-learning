@@ -110,17 +110,7 @@ const getBadgeColor = (badge) => {
 };
 
 export default function ForexCourseSlider() {
-  const containerVariants = {
-    hidden: {},
-    show: {
-      transition: { staggerChildren: 0.1 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
+ 
   return (
     <section className="relative my-16 mb-0 py-10 pb-10 overflow-hidden bg-gray-50">
       <div className="container mx-auto px-4 lg:px-0 relative z-10">
@@ -149,7 +139,7 @@ export default function ForexCourseSlider() {
         </motion.div>
 
         {/* Slider Controls */}
-        <div className="absolute z-30 top-22 right-4 flex gap-3">
+        <div className="absolute z-30 lg:top-22 top-40 right-4 flex gap-3">
           <button
             aria-label="Previous"
             className="swiper-prev-btn p-3 rounded-lg 
@@ -173,23 +163,24 @@ export default function ForexCourseSlider() {
 
         {/* Swiper */}
         <div className="relative overflow-hidden mt-18">
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            slidesPerView={4}
-            spaceBetween={40}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
-            loop={true}
-            navigation={{
-              nextEl: ".swiper-next-btn",
-              prevEl: ".swiper-prev-btn",
-            }}
-            breakpoints={{
-              640: { slidesPerView: 1.1, spaceBetween: 20 },
-              768: { slidesPerView: 2.2, spaceBetween: 30 },
-              1024: { slidesPerView: 3, spaceBetween: 40 },
-              1280: { slidesPerView: 4, spaceBetween: 40 },
-            }}
-          >
+         <Swiper
+  modules={[Navigation, Autoplay]}
+  slidesPerView={1} // Default for mobile
+  spaceBetween={20}
+  autoplay={{ delay: 3500, disableOnInteraction: false }}
+  loop={true}
+  navigation={{
+    nextEl: ".swiper-next-btn",
+    prevEl: ".swiper-prev-btn",
+  }}
+  breakpoints={{
+    640: { slidesPerView: 1, spaceBetween: 20 },
+    768: { slidesPerView: 2, spaceBetween: 30 },
+    1024: { slidesPerView: 3, spaceBetween: 35 },
+    1280: { slidesPerView: 4, spaceBetween: 40 },
+  }}
+>
+
             {courses.map((course, i) => (
               <SwiperSlide key={i}>
                 <motion.div

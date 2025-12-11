@@ -66,8 +66,10 @@ export const KnowledgeSection = () => {
     },
   ];
   return (
-    <section className="w-full bg-[#131722] bg-[radial-gradient(circle_at_center,#1d4ed8_0%,#131722_65%)] container mx-auto px-16 mt-10 rounded-4xl py-12 pb-10">
-      <div className="grid lg:grid-cols-3 gap-12 items-center ">
+    <section className="w-full px-4 lg:px-0  mt-10">
+
+      <div className="bg-[#131722] bg-[radial-gradient(circle_at_center,#1d4ed8_0%,#131722_65%)] container mx-auto lg:px-16 px-6 rounded-4xl py-12 pb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12 items-center ">
         {/* LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,7 +78,7 @@ export const KnowledgeSection = () => {
           className="space-y-8 col-span-2"
         >
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-white">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-white">
             Master Forex Trading with <br />
             Expert Mentors
           </h1>
@@ -188,18 +190,20 @@ export const KnowledgeSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="  gap-4 sm:gap-6"
+          className="  gap-4 sm:gap-6 mt-10 lg:mt-0"
         >
           {/* LEFT IMAGE */}
           <div className="rounded-4xl overflow-hidden shadow-md">
             <Image
               src={ForexChart}
               height={500}
+              width={100}
               alt="Forex chart"
-              className="w-full h-48 sm:h-64 md:h-140 object-cover   rounded-4xl"
+              className="w-full h-48 sm:h-64 md:h-140 object-cover rounded-4xl"
             />
           </div>
         </motion.div>
+      </div>
       </div>
     </section>
   );
