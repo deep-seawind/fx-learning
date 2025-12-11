@@ -8,7 +8,7 @@ import {
   HelpCircle,
   Laptop,
 } from "lucide-react";
-import ForexChart from "../../public/images/images/forex-chart-1.jpg"; 
+import ForexChart from "../../public/images/images/forex-chart-1.jpg";
 import { useEffect, useRef, useState } from "react";
 
 export const KnowledgeSection = () => {
@@ -77,9 +77,8 @@ export const KnowledgeSection = () => {
         >
           {/* Heading */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-white">
-            Master Forex Trading with{" "}
-            <br />
-              Expert Mentors 
+            Master Forex Trading with <br />
+            Expert Mentors
           </h1>
 
           {/* Description */}
@@ -108,8 +107,8 @@ export const KnowledgeSection = () => {
         "
                 >
                   {/* Icon */}
-                 <div
-    className="
+                  <div
+                    className="
       w-14 h-14 flex items-center justify-center 
       rounded-xl mb-4 
       bg-customs bg-blue-900/40 
@@ -117,7 +116,7 @@ export const KnowledgeSection = () => {
       group-hover:bg-[#2563eb] group-hover:text-white
       transition-all duration-300 shadow-sm
     "
-  > 
+                  >
                     <Icon size={30} />
                   </div>
 
@@ -127,9 +126,7 @@ export const KnowledgeSection = () => {
                   </h4>
 
                   {/* Description */}
-                  <p className="  text-gray-400 text-sm mt-1">
-                    {item.desc}
-                  </p>
+                  <p className="  text-gray-400 text-sm mt-1">{item.desc}</p>
                 </div>
               );
             })}

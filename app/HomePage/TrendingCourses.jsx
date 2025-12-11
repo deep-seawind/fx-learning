@@ -22,34 +22,34 @@ import "swiper/css/pagination";
 import { motion } from "framer-motion";
 
 const courses = [
- {
-  title: "Complete Forex Trading Masterclass 2025: From Zero to Pro",
-  author: "Rayner Teo, TradingSim",
-  thumbnail:
-    "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=80",
-  rating: "4.9",
-  reviews: "55,120",
-  price: "₹799",
-  oldPrice: "₹5,999",
-  badge: "Bestseller",
-  students: "142K",
-  duration: "32h",
-  gradient: "from-emerald-400 to-teal-500",
-},
+  {
+    title: "Complete Forex Trading Masterclass 2025: From Zero to Pro",
+    author: "Rayner Teo, TradingSim",
+    thumbnail:
+      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=80",
+    rating: "4.9",
+    reviews: "55,120",
+    price: "₹799",
+    oldPrice: "₹5,999",
+    badge: "Bestseller",
+    students: "142K",
+    duration: "32h",
+    gradient: "from-emerald-400 to-teal-500",
+  },
 
-{
-  title: "Technical Analysis & Risk Management for FX Traders",
-  author: "Kathy Lien, BKForex",
-  thumbnail:
-    "https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=900&q=80",
-  rating: "4.7",
-  reviews: "31,800",
-  price: "₹659",
-  oldPrice: "₹3,199",
-  badge: "Top Rated",
-  students: "98K",
-  duration: "28h",
-},
+  {
+    title: "Technical Analysis & Risk Management for FX Traders",
+    author: "Kathy Lien, BKForex",
+    thumbnail:
+      "https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=900&q=80",
+    rating: "4.7",
+    reviews: "31,800",
+    price: "₹659",
+    oldPrice: "₹3,199",
+    badge: "Top Rated",
+    students: "98K",
+    duration: "28h",
+  },
 
   {
     title: "Algorithmic Trading with Python: Automated Forex Strategies",
@@ -79,22 +79,20 @@ const courses = [
     duration: "24h",
   },
 
- {
-  title: "Fundamental Analysis: Central Banks & Economic Events",
-  author: "Jamie Saette, FX Street",
-  thumbnail:
-    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
-  rating: "4.5",
-  reviews: "12,340",
-  price: "₹559",
-  oldPrice: "₹1,999",
-  badge: "Limited Time",
-  students: "52K",
-  duration: "18h",
-},
+  {
+    title: "Fundamental Analysis: Central Banks & Economic Events",
+    author: "Jamie Saette, FX Street",
+    thumbnail:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
+    rating: "4.5",
+    reviews: "12,340",
+    price: "₹559",
+    oldPrice: "₹1,999",
+    badge: "Limited Time",
+    students: "52K",
+    duration: "18h",
+  },
 ];
-
-
 
 const getBadgeColor = (badge) => {
   switch (badge) {
@@ -124,54 +122,56 @@ export default function ForexCourseSlider() {
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
   return (
-   <section className="relative my-16 mb-0 py-10 pb-10 overflow-hidden bg-gray-50">
-  <div className="container mx-auto px-4 lg:px-0 relative z-10">
-
-    {/* Header */}
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="text-center mb-10"
-    >
-      <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tight">
-        Trending Courses on
-        <span className="bg-clip-text text-transparent 
+    <section className="relative my-16 mb-0 py-10 pb-10 overflow-hidden bg-gray-50">
+      <div className="container mx-auto px-4 lg:px-0 relative z-10">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-10"
+        >
+          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight tracking-tight">
+            Trending Courses on
+            <span
+              className="bg-clip-text text-transparent 
           bg-[#2563EB]
-          block sm:inline ps-3">
-          Fx Education
-        </span>
-      </h2>
+          block sm:inline ps-3"
+            >
+              Fx Education
+            </span>
+          </h2>
 
-      <p className="text-gray-600 pt-3">
-        Learn from world-class traders & transform your financial future through curated, premium trading courses.
-      </p>
-    </motion.div>
+          <p className="text-gray-600 pt-3">
+            Learn from world-class traders & transform your financial future
+            through curated, premium trading courses.
+          </p>
+        </motion.div>
 
-    {/* Slider Controls */}
-    <div className="absolute z-30 top-22 right-4 flex gap-3">
-      <button
-        aria-label="Previous"
-        className="swiper-prev-btn p-3 rounded-lg 
+        {/* Slider Controls */}
+        <div className="absolute z-30 top-22 right-4 flex gap-3">
+          <button
+            aria-label="Previous"
+            className="swiper-prev-btn p-3 rounded-lg 
         bg-[#2563EB]
         text-white shadow-lg hover:shadow-2xl 
         hover:scale-110 transition duration-300"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
 
-      <button
-        aria-label="Next"
-        className="swiper-next-btn p-3 rounded-lg 
+          <button
+            aria-label="Next"
+            className="swiper-next-btn p-3 rounded-lg 
         bg-linear-to-r from-[#0057ff] to-[#0036d6]
         text-white shadow-lg hover:shadow-2xl 
         hover:scale-110 transition duration-300"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-    </div>
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
 
-   {/* Swiper */}
+        {/* Swiper */}
         <div className="relative overflow-hidden mt-18">
           <Swiper
             modules={[Navigation, Autoplay]}
@@ -179,7 +179,10 @@ export default function ForexCourseSlider() {
             spaceBetween={40}
             autoplay={{ delay: 3500, disableOnInteraction: false }}
             loop={true}
-            navigation={{ nextEl: ".swiper-next-btn", prevEl: ".swiper-prev-btn" }}
+            navigation={{
+              nextEl: ".swiper-next-btn",
+              prevEl: ".swiper-prev-btn",
+            }}
             breakpoints={{
               640: { slidesPerView: 1.1, spaceBetween: 20 },
               768: { slidesPerView: 2.2, spaceBetween: 30 },
@@ -187,7 +190,6 @@ export default function ForexCourseSlider() {
               1280: { slidesPerView: 4, spaceBetween: 40 },
             }}
           >
-
             {courses.map((course, i) => (
               <SwiperSlide key={i}>
                 <motion.div
@@ -199,7 +201,6 @@ export default function ForexCourseSlider() {
                     overflow-hidden transition-all duration-300 cursor-pointer 
                     hover:shadow-2xl hover:border-indigo-200 mb-8"
                 >
-
                   {/* Image Area */}
                   <div className="relative w-full h-52 overflow-hidden">
                     <img
@@ -210,10 +211,14 @@ export default function ForexCourseSlider() {
                     />
 
                     {/* Play Overlay */}
-                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center 
-                      opacity-0 group-hover:opacity-100 transition duration-500">
-                      <div className="bg-white/95 backdrop-blur-md p-4 rounded-full shadow-2xl 
-                        scale-75 group-hover:scale-100 transition duration-300">
+                    <div
+                      className="absolute inset-0 bg-black/30 flex items-center justify-center 
+                      opacity-0 group-hover:opacity-100 transition duration-500"
+                    >
+                      <div
+                        className="bg-white/95 backdrop-blur-md p-4 rounded-full shadow-2xl 
+                        scale-75 group-hover:scale-100 transition duration-300"
+                      >
                         <Play className="w-8 h-8 text-[#0049ac] fill-[#0049ac]" />
                       </div>
                     </div>
@@ -260,12 +265,14 @@ export default function ForexCourseSlider() {
                       {/* Rating */}
                       <div className="flex items-center gap-2">
                         <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                        <span className="font-bold text-gray-900">{course.rating}</span>
+                        <span className="font-bold text-gray-900">
+                          {course.rating}
+                        </span>
                         <span className="text-gray-400 text-sm hidden sm:inline">
                           ({course.reviews} reviews)
                         </span>
                       </div>
-                      
+
                       {/* Price */}
                       <div>
                         <span className="text-2xl font-bold text-[#0049ac]">
@@ -279,9 +286,11 @@ export default function ForexCourseSlider() {
 
                     {/* Enroll Button */}
                     <div className="mt-4">
-                      <button className="w-full bg-[#0049ac] text-white px-6 py-3 rounded-xl font-semibold 
+                      <button
+                        className="w-full bg-[#0049ac] text-white px-6 py-3 rounded-xl font-semibold 
                         text-md shadow-lg shadow-indigo-300/50 hover:bg-[#2563EB] transition-all 
-                        flex items-center justify-center gap-2">
+                        flex items-center justify-center gap-2"
+                      >
                         View Course
                         <ArrowRight className="w-5 h-5" />
                       </button>
@@ -290,11 +299,9 @@ export default function ForexCourseSlider() {
                 </motion.div>
               </SwiperSlide>
             ))}
-
           </Swiper>
         </div>
-  </div>
-</section>
-
+      </div>
+    </section>
   );
 }

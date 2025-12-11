@@ -26,9 +26,7 @@ export default function AICareerHero() {
           <div className="text-white space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight tracking-tight">
               Master Your Skills in <br />
-             
-                Forex Trading
-              
+              Forex Trading
             </h1>
 
             <p className="text-base sm:text-lg text-gray-300">

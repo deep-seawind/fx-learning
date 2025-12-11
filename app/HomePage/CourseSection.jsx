@@ -356,115 +356,119 @@ export default function CourseSection() {
           </motion.div>
           {/* Courses Grid */}
 
-         <div className="lg:col-span-3">
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-  >
-    <div className="mb-12">
-      <h2 className="text-4xl font-bold text-gray-900 mb-2">
-        {categories[active].name}
-      </h2>
-      <div className="w-20 h-1 bg-linear-to-r from-[#0049ac] to-[#0066ff] rounded-full"></div>
-    </div>
-
-    <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-      {(coursesByCategory[active] || []).map((course, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: i * 0.1 }}
-          className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-        >
-          {/* Image Container */}
-          <div className="relative h-48 overflow-hidden">
-            <div
-              style={{ backgroundImage: `url(${course.img.src})` }}
-              className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent"></div>
-
-            {/* Bestseller Badge */}
-            {course.isBestSeller && (
-              <div className="absolute top-4 right-4 bg-linear-to-r from-orange-500 to-pink-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-                <Star size={14} className="fill-white" />
-                BESTSELLER
+          <div className="lg:col-span-3">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="mb-12">
+                <h2 className="text-4xl font-bold text-gray-900 mb-2">
+                  {categories[active].name}
+                </h2>
+                <div className="w-20 h-1 bg-linear-to-r from-[#0049ac] to-[#0066ff] rounded-full"></div>
               </div>
-            )}
 
-            {/* Category Tag */}
-            <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-gray-900 text-xs font-semibold px-3 py-1.5 rounded-full">
-              {course.tag}
-            </div>
+              <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {(coursesByCategory[active] || []).map((course, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                  >
+                    {/* Image Container */}
+                    <div className="relative h-48 overflow-hidden">
+                      <div
+                        style={{ backgroundImage: `url(${course.img.src})` }}
+                        className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent"></div>
 
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="bg-white/90 backdrop-blur-md p-4 rounded-full transform group-hover:scale-110 transition-transform duration-300">
-                <PlayCircle size={32} className="text-[#0049ac]" />
+                      {/* Bestseller Badge */}
+                      {course.isBestSeller && (
+                        <div className="absolute top-4 right-4 bg-linear-to-r from-orange-500 to-pink-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
+                          <Star size={14} className="fill-white" />
+                          BESTSELLER
+                        </div>
+                      )}
+
+                      {/* Category Tag */}
+                      <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-gray-900 text-xs font-semibold px-3 py-1.5 rounded-full">
+                        {course.tag}
+                      </div>
+
+                      {/* Play Button Overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="bg-white/90 backdrop-blur-md p-4 rounded-full transform group-hover:scale-110 transition-transform duration-300">
+                          <PlayCircle size={32} className="text-[#0049ac]" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      {/* University */}
+                      <p className="text-sm font-semibold text-[#0049ac] mb-2 uppercase tracking-wide">
+                        {course.uni}
+                      </p>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 line-clamp-2 leading-tight min-h-14">
+                        {course.title}
+                      </h3>
+
+                      {/* Stats Grid */}
+                      <div className="flex items-center justify-between mb-5 pb-5 border-b border-gray-100">
+                        {/* Duration */}
+                        <div className="flex items-center gap-2 text-gray-600">
+                          <div className="p-2 bg-[#0049ac]/10 rounded-lg">
+                            <Clock size={16} className="text-[#0049ac]" />
+                          </div>
+                          <span className="text-sm font-medium">
+                            {course.duration}
+                          </span>
+                        </div>
+
+                        {/* Rating */}
+                        <div className="flex items-center gap-1.5 bg-amber-50 px-3 py-2 rounded-lg">
+                          <Star
+                            size={16}
+                            className="fill-amber-400 text-amber-400"
+                          />
+                          <span className="text-sm font-bold text-amber-700">
+                            {course.rating ? course.rating.toFixed(1) : "N/A"}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Price & CTA */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-2xl font-bold bg-linear-to-r from-[#0049ac] to-[#0066ff] bg-clip-text text-transparent">
+                            {course.price || "Free"}
+                          </span>
+                          {course.oldPrice && (
+                            <span className="text-sm line-through text-gray-400">
+                              {course.oldPrice}
+                            </span>
+                          )}
+                        </div>
+
+                        <button className="px-6 py-3 bg-linear-to-r from-[#0049ac] to-[#0066ff] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#0049ac]/50 transform hover:-translate-y-0.5 transition-all duration-300 active:scale-95">
+                          Enroll
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Hover Border Effect */}
+                    <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-[#0049ac]/20 transition-colors duration-300 pointer-events-none"></div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
+            </motion.div>
           </div>
-
-          {/* Content */}
-          <div className="p-6">
-            {/* University */}
-            <p className="text-sm font-semibold text-[#0049ac] mb-2 uppercase tracking-wide">
-              {course.uni}
-            </p>
-
-            {/* Title */}
-            <h3 className="text-xl font-bold text-gray-900 mb-4 line-clamp-2 leading-tight min-h-14">
-              {course.title}
-            </h3>
-
-            {/* Stats Grid */}
-            <div className="flex items-center justify-between mb-5 pb-5 border-b border-gray-100">
-              {/* Duration */}
-              <div className="flex items-center gap-2 text-gray-600">
-                <div className="p-2 bg-[#0049ac]/10 rounded-lg">
-                  <Clock size={16} className="text-[#0049ac]" />
-                </div>
-                <span className="text-sm font-medium">{course.duration}</span>
-              </div>
-
-              {/* Rating */}
-              <div className="flex items-center gap-1.5 bg-amber-50 px-3 py-2 rounded-lg">
-                <Star size={16} className="fill-amber-400 text-amber-400" />
-                <span className="text-sm font-bold text-amber-700">
-                  {course.rating ? course.rating.toFixed(1) : "N/A"}
-                </span>
-              </div>
-            </div>
-
-            {/* Price & CTA */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-bold bg-linear-to-r from-[#0049ac] to-[#0066ff] bg-clip-text text-transparent">
-                  {course.price || "Free"}
-                </span>
-                {course.oldPrice && (
-                  <span className="text-sm line-through text-gray-400">
-                    {course.oldPrice}
-                  </span>
-                )}
-              </div>
-
-              <button className="px-6 py-3 bg-linear-to-r from-[#0049ac] to-[#0066ff] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#0049ac]/50 transform hover:-translate-y-0.5 transition-all duration-300 active:scale-95">
-                Enroll
-              </button>
-            </div>
-          </div>
-
-          {/* Hover Border Effect */}
-          <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-[#0049ac]/20 transition-colors duration-300 pointer-events-none"></div>
-        </motion.div>
-      ))}
-    </div>
-  </motion.div>
-</div>
-
         </div>
       </div>
     </section>
