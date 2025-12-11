@@ -279,7 +279,7 @@ export default function ForexCourseSlider() {
 
                     {/* Enroll Button */}
                     <div className="mt-4">
-                      <button className="w-full bg-[#0049ac] text-white px-6 py-3 rounded-xl font-bold 
+                      <button className="w-full bg-[#0049ac] text-white px-6 py-3 rounded-xl font-semibold 
                         text-md shadow-lg shadow-indigo-300/50 hover:bg-[#2563EB] transition-all 
                         flex items-center justify-center gap-2">
                         View Course

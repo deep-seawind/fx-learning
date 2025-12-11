@@ -5,6 +5,7 @@ import ForexBasics from "../../public/images/images/forex-basics.jpg";
 import TechnicalAnalysis from "../../public/images/categories/image-4.jpg";
 import RiskMangement from "../../public/images/images/risk-management.jpg";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const courses = [
   {
@@ -29,7 +30,7 @@ const fadeUp = {
 };
 export default function Certificates() {
   return (
-    <section className="w-full bg-[#131722] rounded-4xl py-16 px-6 md:px-8 mt-16 container mx-auto">
+    <section className="w-full bg-[#131722] bg-[radial-gradient(circle_at_center,#1d4ed8_0%,#131722_65%)] rounded-4xl py-16 px-6 md:px-8 mt-16 container mx-auto">
       <div className="grid md:grid-cols-5 gap-8 items-center">
         {/* LEFT TEXT SECTION */}
         <motion.div
@@ -40,11 +41,9 @@ export default function Certificates() {
           viewport={{ once: true }}
           className="text-white col-span-2"
         >
-          <h2 className="text-3xl lg:text-5xl font-semibold leading-tight tracking-tight text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400">
+          <h2 className="text-3xl lg:text-5xl font-semibold leading-tight tracking-tight ">
             Get certified and grow in <br />
-            <span className="bg-clip-text text-transparent bg-[#2563EB]">
-              Forex Trading
-            </span>
+            Forex Trading
           </h2>
 
           <p className="text-gray-300 mt-4">
@@ -52,13 +51,12 @@ export default function Certificates() {
             strategies, and mentorship from experienced professional traders.
           </p>
 
-          <motion.button
-            whileHover={{ x: 5 }}
-            transition={{ duration: 0.3 }}
-            className="flex gap-2 items-center font-semibold mt-6 text-amber-300 transition-all duration-300"
+          <Link
+            href="#"
+            className="font-medium px-6 py-3 rounded-lg bg-[#2563EB] shadow-lg hover:from-indigo-700 hover:to-blue-600 transition-all hover:-translate-y-0.5 active:scale-95 table mt-6"
           >
-            Explore Forex Courses <ArrowRight size={18} />
-          </motion.button>
+            Explore Forex Courses
+          </Link>
         </motion.div>
 
         {/* RIGHT: COURSE CARDS */}
@@ -73,7 +71,7 @@ export default function Certificates() {
           {courses.map((course, index) => (
             <motion.div
               key={index}
-              className="bg-[#323541] rounded-2xl p-3 cursor-pointer 
+              className="bg-slate-900 rounded-2xl p-3 cursor-pointer 
                          hover:scale-[1.06] transition-all duration-300
                          shadow-md hover:shadow-cyan-600/20"
               whileHover={{ scale: 1.07 }}

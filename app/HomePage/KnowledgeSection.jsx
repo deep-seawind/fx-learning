@@ -101,9 +101,9 @@ export const KnowledgeSection = () => {
                 <div
                   key={index}
                   className="
-          p-5 rounded-2xl bg-white dark:bg-[#111] 
+          p-5 rounded-2xl bg-[#111] 
           shadow-md hover:shadow-xl 
-          border border-gray-100 dark:border-gray-800
+          border border-gray-800
           transition-all duration-300 group
         "
                 >
@@ -112,8 +112,8 @@ export const KnowledgeSection = () => {
     className="
       w-14 h-14 flex items-center justify-center 
       rounded-xl mb-4 
-      bg-customs dark:bg-blue-900/40 
-      text-black dark:text-blue-300
+      bg-customs bg-blue-900/40 
+      text-black
       group-hover:bg-[#2563eb] group-hover:text-white
       transition-all duration-300 shadow-sm
     "
@@ -122,12 +122,12 @@ export const KnowledgeSection = () => {
                   </div>
 
                   {/* Title */}
-                  <h4 className="font-semibold text-gray-900 dark:text-white text-lg">
+                  <h4 className="font-semibold   text-white text-lg">
                     {item.title}
                   </h4>
 
                   {/* Description */}
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                  <p className="  text-gray-400 text-sm mt-1">
                     {item.desc}
                   </p>
                 </div>

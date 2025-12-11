@@ -20,15 +20,15 @@ export default function AICareerHero() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <section className="bg-[#0B1220] rounded-4xl py-12 mb-20 mt-10 px-6 md:px-10 lg:px-16 container mx-auto overflow-hidden shadow-xl">
+      <section className="bg-[#131722] bg-[radial-gradient(circle_at_center,#1d4ed8_0%,#131722_65%)] rounded-4xl py-12 mb-20 mt-10 px-6 md:px-10 lg:px-16 container mx-auto overflow-hidden shadow-xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
           {/* LEFT CONTENT */}
           <div className="text-white space-y-6">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight tracking-tight text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight tracking-tight">
               Master Your Skills in <br />
-              <span className="bg-clip-text text-transparent bg-[#2563EB] drop-shadow-lg">
+             
                 Forex Trading
-              </span>
+              
             </h1>
 
             <p className="text-base sm:text-lg text-gray-300">
@@ -42,7 +42,7 @@ export default function AICareerHero() {
                   key={i}
                   className="flex items-center gap-2 text-gray-200 hover:text-white transition"
                 >
-                  <span className="p-2 bg-[#2563EB] rounded-full">
+                  <span className="p-2 bg-customs rounded-full">
                     {item.icon}
                   </span>
                   <span className="text-sm md:text-base font-medium">
